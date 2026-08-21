@@ -1,0 +1,820 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Start a project with Lawani St.">
+    <meta name="theme-color" content="#171a18">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="stylesheet" href="assets/css/lamalama-ui.css?v=20260820-dock-static-text-1">
+    <title>Start a Project — Lawani St.</title>
+    <link rel="canonical" href="https://lawanistreet.com/vcard.html">
+    <script>
+      document.documentElement.classList.remove("no-js");
+      document.documentElement.classList.add("js");
+      (function () {
+        var theme = "dark";
+        try {
+          var storedTheme = localStorage.getItem("ll-theme");
+          theme = storedTheme === "light" || storedTheme === "dark"
+            ? storedTheme
+            : (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+        } catch (error) {}
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <style>
+      .vcard-background {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 18% 16%, rgba(244, 242, 236, 0.08), transparent 34%),
+          radial-gradient(circle at 84% 82%, rgba(244, 75, 24, 0.07), transparent 32%),
+          linear-gradient(135deg, #171a18 0%, #0b0d0c 54%, #070807 100%);
+        pointer-events: none;
+      }
+
+      body.ll-contact-page {
+        background: #070807;
+      }
+
+      .project-form-wrapper {
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        padding: 40px 20px;
+        position: relative;
+        z-index: 2;
+      }
+
+      .project-form {
+        --project-control-height: 76px;
+        --project-control-width: calc((100% - 32px) / 3);
+        --project-form-gap: clamp(22px, 3vw, 32px);
+        --ll-white: #f4f2ec;
+        --ll-ink: #070807;
+        --ll-light-muted: rgba(244, 242, 236, 0.72);
+        --ll-dark-muted: rgba(244, 242, 236, 0.56);
+        --ll-light-line: rgba(244, 242, 236, 0.32);
+        --ll-dark-line: rgba(244, 242, 236, 0.28);
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #f4f2ec;
+        color-scheme: dark;
+      }
+
+      .project-form__step {
+        display: none;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+      }
+
+      .project-form__step.active {
+        display: grid;
+        row-gap: var(--project-form-gap);
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .project-form__question {
+        font-size: clamp(24px, 4vw, 36px);
+        line-height: 1.2;
+        margin: 0;
+        font-family: var(--ll-sans);
+        font-weight: 400;
+        color: #f4f2ec;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
+
+      .project-form__options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-auto-rows: var(--project-control-height);
+        align-items: stretch;
+        gap: 16px;
+        margin: 0;
+      }
+
+      .project-form__option {
+        appearance: none;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        min-height: var(--project-control-height);
+        align-items: center;
+        justify-content: flex-start;
+        background: rgba(244, 242, 236, 0.025);
+        border: 1px solid rgba(244, 242, 236, 0.32);
+        color: #f4f2ec;
+        padding: 20px 24px;
+        font-family: var(--ll-sans);
+        font-size: 14px;
+        cursor: pointer;
+        transition: border-color 0.2s ease, background-color 0.2s ease;
+        text-align: left;
+        border-radius: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        position: relative;
+      }
+
+      .project-form__option:hover {
+        border-color: rgba(244, 242, 236, 0.82);
+        background-color: rgba(244, 242, 236, 0.1);
+      }
+
+      .project-form__option:focus {
+        outline: 2px solid var(--ll-white);
+        outline-offset: 2px;
+      }
+
+      .project-form__option.selected {
+        background-color: #f4f2ec;
+        color: #070807;
+        border-color: #f4f2ec;
+      }
+
+      .project-form__option:focus-visible {
+        outline: 2px solid var(--ll-orange);
+        outline-offset: 2px;
+      }
+
+      .project-form__field-group {
+        margin: 0;
+      }
+
+      .project-form__label {
+        display: block;
+        font-size: 12px;
+        margin-bottom: 8px;
+        color: rgba(244, 242, 236, 0.82);
+        font-family: var(--ll-mono);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .project-form__input {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(244, 242, 236, 0.36);
+        color: #f4f2ec;
+        caret-color: var(--ll-orange);
+        -webkit-text-fill-color: #f4f2ec;
+        padding: 12px 0;
+        font-family: var(--ll-sans);
+        font-size: 18px;
+        transition: border-color 0.2s ease;
+        border-radius: 0;
+      }
+
+      .project-form__input:focus {
+        outline: none;
+        border-color: #f4f2ec;
+      }
+
+      .project-form__input::placeholder {
+        color: rgba(244, 242, 236, 0.56);
+        opacity: 1;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
+
+      .project-form__textarea {
+        width: 100%;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid rgba(244, 242, 236, 0.36);
+        color: #f4f2ec;
+        caret-color: var(--ll-orange);
+        -webkit-text-fill-color: #f4f2ec;
+        padding: 12px 0;
+        font-family: var(--ll-sans);
+        font-size: 18px;
+        min-height: 120px;
+        resize: vertical;
+        transition: border-color 0.2s ease;
+        border-radius: 0;
+      }
+
+      .project-form__textarea:focus {
+        outline: none;
+        border-color: #f4f2ec;
+      }
+
+      .project-form__textarea::placeholder {
+        color: rgba(244, 242, 236, 0.56);
+        opacity: 1;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
+
+      .project-form__actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        gap: 16px;
+        margin: 0;
+      }
+
+      .project-form__button {
+        appearance: none;
+        display: inline-flex;
+        width: var(--project-control-width);
+        min-width: 200px;
+        height: var(--project-control-height);
+        min-height: var(--project-control-height);
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: 1px solid rgba(244, 242, 236, 0.52);
+        color: #f4f2ec;
+        padding: 0 24px;
+        font-family: var(--ll-sans);
+        font-size: 12px;
+        cursor: pointer;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        border-radius: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .project-form__button:hover {
+        background-color: #f4f2ec;
+        color: #070807;
+      }
+
+      .project-form__button:focus {
+        outline: 2px solid var(--ll-white);
+        outline-offset: 2px;
+      }
+
+      .project-form__button:focus-visible {
+        outline: 2px solid var(--ll-orange);
+        outline-offset: 2px;
+      }
+
+      .project-form__button:disabled {
+        cursor: wait;
+        opacity: 0.55;
+      }
+
+      .project-form[data-state="success"] .project-form__button:disabled {
+        cursor: default;
+        opacity: 1;
+      }
+
+      .project-form__button--secondary {
+        border-color: rgba(244, 242, 236, 0.28);
+      }
+
+      .project-form__button--secondary:hover {
+        background-color: rgba(244, 242, 236, 0.1);
+        color: #f4f2ec;
+      }
+
+      .project-form__back {
+        background: none;
+        border: none;
+        color: rgba(244, 242, 236, 0.72);
+        padding: 8px 0;
+        cursor: pointer;
+        font-family: var(--ll-mono);
+        font-size: 12px;
+        margin: 0;
+        transition: color 0.2s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .project-form__back:hover {
+        color: #f4f2ec;
+      }
+
+      .project-form__back:focus {
+        outline: 2px solid var(--ll-white);
+        outline-offset: 2px;
+      }
+
+      .project-form__back:focus-visible {
+        outline: 2px solid var(--ll-orange);
+        outline-offset: 2px;
+      }
+
+      .project-form__validation {
+        color: var(--ll-orange);
+        font-family: var(--ll-mono);
+        font-size: 12px;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .project-form__summary {
+        margin: 0;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(244, 242, 236, 0.28);
+      }
+
+      .project-form__summary-label {
+        font-family: var(--ll-mono);
+        font-size: 11px;
+        color: rgba(244, 242, 236, 0.72);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+      }
+
+      .project-form__summary-value {
+        font-family: var(--ll-sans);
+        font-size: 14px;
+        color: #f4f2ec;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
+
+      .project-form__other-field {
+        margin: 0;
+        padding: 0;
+      }
+
+      .project-form__honeypot {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      .project-form__status {
+        min-height: 20px;
+        margin: 0;
+        color: rgba(244, 242, 236, 0.72);
+        font-family: var(--ll-mono);
+        font-size: 12px;
+        line-height: 1.5;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .project-form__status[data-state="pending"] {
+        color: var(--ll-white);
+      }
+
+      .project-form__status[data-state="success"] {
+        color: #b9f6ca;
+      }
+
+      .project-form__status[data-state="error"] {
+        color: var(--ll-orange);
+      }
+
+      .project-form__status a {
+        color: inherit;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      @media (max-width: 768px) {
+        .project-form {
+          --project-control-height: 68px;
+          --project-control-width: 100%;
+        }
+
+        .project-form-wrapper {
+          padding: 20px 16px;
+          place-items: start;
+          padding-top: 80px;
+        }
+
+        .project-form__options {
+          grid-template-columns: 1fr;
+          grid-auto-rows: var(--project-control-height);
+        }
+
+        .project-form__option {
+          min-height: var(--project-control-height);
+        }
+
+        .project-form__actions {
+          flex-direction: column;
+        }
+
+        .project-form__button {
+          width: 100%;
+          min-width: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="ll-contact-page">
+    <div class="vcard-background" aria-hidden="true"></div>
+    <a class="ll-skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="ll-floating-header" data-ll-header>
+      <div class="ll-nav-dock">
+        <a class="ll-nav-dock__brand ll-button ll-button--square" href="index.html" aria-label="Lawani St home"><span aria-hidden="true">L:</span></a>
+        <p class="ll-nav-dock__note" data-ll-nav-note>Last stop before things change</p>
+        <button class="ll-nav-toggle ll-button ll-button--square" type="button" aria-controls="ll-mobile-menu" aria-expanded="false" aria-label="Open navigation" data-ll-menu-toggle>
+          <svg class="ll-icon ll-nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path class="ll-icon__menu-line ll-icon__menu-line--top" d="M5 6.5h14"></path>
+            <path class="ll-icon__menu-line ll-icon__menu-line--middle" d="M5 12h14"></path>
+            <path class="ll-icon__menu-line ll-icon__menu-line--bottom" d="M5 17.5h14"></path>
+          </svg>
+          <span class="ll-visually-hidden" data-ll-menu-label>Menu</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="ll-mobile-menu" id="ll-mobile-menu" aria-hidden="true" data-ll-mobile-menu>
+      <nav class="ll-mobile-menu__nav" aria-label="Site navigation">
+        <a class="ll-menu-row" href="index.html#work">
+          <span>Work</span>
+        </a>
+
+        <div class="ll-menu-group">
+          <button
+            class="ll-menu-row ll-menu-group__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="ll-menu-services"
+            data-ll-submenu-toggle
+          >
+            <span>Expertise</span>
+            <span class="ll-menu-group__plus" aria-hidden="true"><i></i><i></i></span>
+          </button>
+          <div class="ll-menu-group__items" id="ll-menu-services" aria-hidden="true" data-ll-submenu>
+            <div>
+              <a href="index.html#service-branding"><span>Branding</span><span>01</span></a>
+              <a href="index.html#service-digital"><span>Digital</span><span>02</span></a>
+              <a href="index.html#service-marketing"><span>Marketing</span><span>03</span></a>
+            </div>
+          </div>
+        </div>
+
+        <a class="ll-menu-row" href="about-us.html"><span>About Me</span></a>
+        <a class="ll-menu-row" href="vcard.html" aria-current="page"><span>Contact</span></a>
+      </nav>
+      <div class="ll-mobile-menu__actions">
+        <a class="ll-mobile-menu__pitch ll-button" href="pitchdeck.html">Sales pitch</a>
+        <div>
+          <a class="ll-mobile-menu__cta ll-button" href="mailto:talktolawanistreet@gmail.com?subject=Schedule%20a%20call">Schedule a call</a>
+          <a class="ll-mobile-menu__cta ll-button" href="vcard.html" aria-current="page">Start a project</a>
+        </div>
+      </div>
+    </div>
+
+    <a class="ll-menu-reel" href="team.html" aria-label="Meet Leonard Lawani" data-ll-menu-reel>
+      <span class="ll-menu-reel__media" aria-hidden="true">
+        <video muted loop playsinline preload="none" data-ll-menu-reel-video>
+          <source src="assets/video/stuff.mp4" type="video/mp4">
+        </video>
+      </span>
+      <span class="ll-menu-reel__label">This is Leo</span>
+    </a>
+
+    <main class="project-form-wrapper" id="main-content">
+      <form class="project-form" id="projectForm" action="php/mail.php" method="POST">
+        <div class="project-form__honeypot" aria-hidden="true">
+          <label for="website">Leave this field empty</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        
+        <!-- Step 1: Project Type -->
+        <div class="project-form__step active" data-step="1">
+          <h2 class="project-form__question">WHAT ARE WE CREATING?</h2>
+          <div class="project-form__options">
+            <button type="button" class="project-form__option" data-value="brand-identity" aria-pressed="false">BRAND IDENTITY</button>
+            <button type="button" class="project-form__option" data-value="website" aria-pressed="false">WEBSITE</button>
+            <button type="button" class="project-form__option" data-value="campaign" aria-pressed="false">CAMPAIGN</button>
+            <button type="button" class="project-form__option" data-value="product" aria-pressed="false">PRODUCT</button>
+            <button type="button" class="project-form__option" data-value="creative-direction" aria-pressed="false">CREATIVE DIRECTION</button>
+            <button type="button" class="project-form__option" data-value="other" aria-pressed="false">SOMETHING ELSE</button>
+          </div>
+          <div class="project-form__other-field" id="otherField" style="display: none;">
+            <div class="project-form__field-group">
+              <label class="project-form__label" for="otherSpecify">PLEASE SPECIFY</label>
+              <input type="text" class="project-form__input" id="otherSpecify" name="otherSpecify" maxlength="240">
+            </div>
+          </div>
+          <div class="project-form__validation" id="step1Validation" style="display: none;">SELECT AT LEAST ONE OPTION</div>
+          <div class="project-form__actions">
+            <button type="button" class="project-form__button" data-next="2">CONTINUE</button>
+          </div>
+          <input type="hidden" name="projectTypes" id="projectTypes">
+        </div>
+
+        <!-- Step 2: About You -->
+        <div class="project-form__step" data-step="2">
+          <button type="button" class="project-form__back" data-back="1">← BACK</button>
+          <h2 class="project-form__question">TELL ME ABOUT YOU</h2>
+          <div class="project-form__field-group">
+            <label class="project-form__label" for="name">NAME</label>
+            <input type="text" class="project-form__input" id="name" name="name" required minlength="2" maxlength="120" autocomplete="name" placeholder="YOUR NAME">
+          </div>
+          <div class="project-form__field-group">
+            <label class="project-form__label" for="email">EMAIL</label>
+            <input type="email" class="project-form__input" id="email" name="email" required maxlength="254" autocomplete="email" placeholder="YOUR EMAIL">
+          </div>
+          <div class="project-form__field-group">
+            <label class="project-form__label" for="company">COMPANY</label>
+            <input type="text" class="project-form__input" id="company" name="company" maxlength="120" autocomplete="organization" placeholder="YOUR COMPANY">
+          </div>
+          <div class="project-form__actions">
+            <button type="button" class="project-form__button project-form__button--secondary" data-back="1">BACK</button>
+            <button type="button" class="project-form__button" data-next="3">CONTINUE</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Project Details -->
+        <div class="project-form__step" data-step="3">
+          <button type="button" class="project-form__back" data-back="2">← BACK</button>
+          <h2 class="project-form__question">TELL ME ABOUT THE PROJECT</h2>
+          <div class="project-form__summary" id="projectSummary">
+            <div class="project-form__summary-label">SELECTED SERVICES</div>
+            <div class="project-form__summary-value" id="summaryValue"></div>
+          </div>
+          <div class="project-form__field-group">
+            <label class="project-form__label" for="projectDescription">PROJECT DESCRIPTION</label>
+            <textarea class="project-form__textarea" id="projectDescription" name="projectDescription" required minlength="10" maxlength="4000" placeholder="DESCRIBE YOUR PROJECT"></textarea>
+          </div>
+          <div class="project-form__actions">
+            <button type="button" class="project-form__button project-form__button--secondary" data-back="2">BACK</button>
+            <button type="submit" class="project-form__button" data-submit-button>START PROJECT</button>
+          </div>
+          <div class="project-form__status" role="status" aria-live="polite" aria-atomic="true" data-form-status></div>
+        </div>
+
+      </form>
+    </main>
+
+    <script src="assets/js/elastic-cursor.js?v=20260820-production-stable-1" defer></script>
+    <script src="assets/js/pages/lamalama-ui.js?v=20260820-dock-scramble-1" defer></script>
+    <script>
+      (function() {
+        'use strict';
+        
+        const form = document.getElementById('projectForm');
+        const steps = form.querySelectorAll('.project-form__step');
+        const projectTypesInput = document.getElementById('projectTypes');
+        const otherField = document.getElementById('otherField');
+        const otherSpecify = document.getElementById('otherSpecify');
+        const step1Validation = document.getElementById('step1Validation');
+        const summaryValue = document.getElementById('summaryValue');
+        const submitButton = form.querySelector('[data-submit-button]');
+        const formStatus = form.querySelector('[data-form-status]');
+        const recipient = 'talktolawanistreet@gmail.com';
+        let currentStep = 1;
+        
+        // Multi-select data model
+        const selectedProjectTypes = new Set();
+        
+        // Project type labels for display
+        const projectTypeLabels = {
+          'brand-identity': 'BRAND IDENTITY',
+          'website': 'WEBSITE',
+          'campaign': 'CAMPAIGN',
+          'product': 'PRODUCT',
+          'creative-direction': 'CREATIVE DIRECTION',
+          'other': 'SOMETHING ELSE'
+        };
+        
+        // Step 1: Multi-select project type options
+        const optionButtons = form.querySelectorAll('.project-form__option');
+        optionButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            const value = this.dataset.value;
+            
+            // Toggle selection
+            if (selectedProjectTypes.has(value)) {
+              selectedProjectTypes.delete(value);
+              this.classList.remove('selected');
+              this.setAttribute('aria-pressed', 'false');
+            } else {
+              selectedProjectTypes.add(value);
+              this.classList.add('selected');
+              this.setAttribute('aria-pressed', 'true');
+            }
+            
+            // Show/hide "Please specify" field for "Something Else"
+            if (selectedProjectTypes.has('other')) {
+              otherField.style.display = 'block';
+              otherSpecify.required = true;
+            } else {
+              otherField.style.display = 'none';
+              otherSpecify.required = false;
+              otherSpecify.value = '';
+              otherSpecify.removeAttribute('aria-invalid');
+              otherSpecify.style.borderColor = '';
+            }
+            
+            // Clear validation when selection changes
+            step1Validation.style.display = 'none';
+            
+            // Update hidden input
+            projectTypesInput.value = Array.from(selectedProjectTypes).join(',');
+          });
+        });
+        
+        // Navigation
+        form.addEventListener('click', function(e) {
+          const nextButton = e.target.closest('[data-next]');
+          const backButton = e.target.closest('[data-back]');
+          
+          if (nextButton) {
+            const targetStep = parseInt(nextButton.dataset.next);
+            if (validateStep(currentStep)) {
+              goToStep(targetStep);
+            }
+          }
+          
+          if (backButton) {
+            const targetStep = parseInt(backButton.dataset.back);
+            goToStep(targetStep);
+          }
+        });
+        
+        function goToStep(stepNumber) {
+          const currentStepEl = form.querySelector(`[data-step="${currentStep}"]`);
+          const nextStepEl = form.querySelector(`[data-step="${stepNumber}"]`);
+          
+          if (currentStepEl && nextStepEl) {
+            currentStepEl.classList.remove('active');
+            nextStepEl.classList.add('active');
+            currentStep = stepNumber;
+
+            // Update summary when entering step 3
+            if (stepNumber === 3) {
+              updateSummary();
+            }
+
+            // Move focus after layout settles without creating a blank frame.
+            const firstInput = nextStepEl.querySelector('input, textarea');
+            if (firstInput) {
+              requestAnimationFrame(() => firstInput.focus({ preventScroll: true }));
+            }
+          }
+        }
+        
+        function updateSummary() {
+          const labels = Array.from(selectedProjectTypes).map(value => projectTypeLabels[value]);
+          summaryValue.textContent = labels.join(' / ');
+        }
+        
+        function validateStep(stepNumber) {
+          const stepEl = form.querySelector(`[data-step="${stepNumber}"]`);
+          let isValid = true;
+          let firstInvalidInput = null;
+          
+          // Step 1: Validate at least one project type selected
+          if (stepNumber === 1) {
+            if (selectedProjectTypes.size === 0) {
+              isValid = false;
+              step1Validation.textContent = 'SELECT AT LEAST ONE OPTION';
+              step1Validation.style.display = 'block';
+            } else if (selectedProjectTypes.has('other') && !otherSpecify.value.trim()) {
+              isValid = false;
+              firstInvalidInput = otherSpecify;
+              otherSpecify.setAttribute('aria-invalid', 'true');
+              otherSpecify.style.borderColor = 'var(--ll-orange)';
+              step1Validation.textContent = 'PLEASE SPECIFY WHAT YOU NEED';
+              step1Validation.style.display = 'block';
+            } else {
+              step1Validation.style.display = 'none';
+            }
+          }
+          
+          // Steps 2 and 3: Validate required inputs
+          const requiredInputs = stepEl.querySelectorAll('input[required], textarea[required]');
+          requiredInputs.forEach(input => {
+            if (!input.value.trim() || !input.checkValidity()) {
+              isValid = false;
+              if (!firstInvalidInput) firstInvalidInput = input;
+              input.setAttribute('aria-invalid', 'true');
+              input.style.borderColor = 'var(--ll-orange)';
+            } else {
+              input.setAttribute('aria-invalid', 'false');
+              input.style.borderColor = '';
+            }
+          });
+
+          if (firstInvalidInput) {
+            firstInvalidInput.focus();
+            firstInvalidInput.reportValidity();
+          }
+          
+          return isValid;
+        }
+        
+        // Form submission
+        form.addEventListener('submit', async function(e) {
+          e.preventDefault();
+
+          if (form.dataset.state === 'success') return;
+          
+          if (validateStep(currentStep)) {
+            const formData = new FormData(form);
+            
+            // Build project types string
+            const projectTypes = Array.from(selectedProjectTypes).map(value => projectTypeLabels[value]);
+            const projectTypesString = projectTypes.join(', ');
+            
+            // Build email body
+            let body = 'PROJECT TYPE:\n' + projectTypesString + '\n\n';
+            body += 'NAME:\n' + formData.get('name') + '\n\n';
+            body += 'EMAIL:\n' + formData.get('email') + '\n\n';
+            body += 'COMPANY:\n' + (formData.get('company') || 'N/A') + '\n\n';
+            
+            // Add "Other service" if specified
+            if (selectedProjectTypes.has('other') && formData.get('otherSpecify')) {
+              body += 'OTHER SERVICE:\n' + formData.get('otherSpecify') + '\n\n';
+            }
+            
+            body += 'PROJECT:\n' + formData.get('projectDescription');
+            
+            const subject = encodeURIComponent('Start a project: ' + projectTypesString);
+            const mailtoUrl = 'mailto:' + recipient + '?subject=' + subject + '&body=' + encodeURIComponent(body);
+
+            formData.set('projectTypes', projectTypesString);
+            formData.set('message', body);
+
+            if (window.location.protocol === 'file:') {
+              window.location.href = mailtoUrl;
+              return;
+            }
+
+            submitButton.disabled = true;
+            submitButton.setAttribute('aria-busy', 'true');
+            submitButton.textContent = 'SENDING...';
+            setFormStatus('pending', 'SENDING YOUR PROJECT REQUEST...');
+
+            try {
+              const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                  'Accept': 'application/json',
+                  'X-Requested-With': 'XMLHttpRequest'
+                },
+                credentials: 'same-origin'
+              });
+              const responseText = await response.text();
+              let data = null;
+
+              try {
+                data = responseText ? JSON.parse(responseText) : null;
+              } catch (error) {}
+
+              if (!response.ok || !data || data.ok !== true) {
+                throw new Error(data && data.error ? data.error : 'Unable to send automatically.');
+              }
+
+              form.dataset.state = 'success';
+              submitButton.textContent = 'PROJECT SENT';
+              setFormStatus('success', 'THANKS — YOUR PROJECT REQUEST HAS BEEN SENT.');
+            } catch (error) {
+              form.dataset.state = 'error';
+              submitButton.disabled = false;
+              submitButton.textContent = 'TRY AGAIN';
+              setFormStatus('error', 'AUTOMATIC SENDING FAILED. ', mailtoUrl);
+            } finally {
+              submitButton.setAttribute('aria-busy', 'false');
+            }
+          }
+        });
+
+        function setFormStatus(state, message, fallbackUrl) {
+          formStatus.dataset.state = state;
+          formStatus.replaceChildren(document.createTextNode(message));
+
+          if (fallbackUrl) {
+            const link = document.createElement('a');
+            link.href = fallbackUrl;
+            link.textContent = 'EMAIL ' + recipient + ' DIRECTLY';
+            formStatus.appendChild(link);
+          }
+        }
+        
+        // Clear validation styles on input
+        form.querySelectorAll('input, textarea').forEach(input => {
+          input.addEventListener('input', function() {
+            this.setAttribute('aria-invalid', 'false');
+            this.style.borderColor = '';
+            if (formStatus.dataset.state === 'error') {
+              setFormStatus('idle', '');
+            }
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
