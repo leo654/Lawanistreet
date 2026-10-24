@@ -248,3 +248,12 @@ html body.home-index .ll-home-hero__message > p.ll-home-hero__scroll-hint {
     backdrop-filter: blur(14px) saturate(1.18) !important;
   }
 }
+
+/* Keep the contact-page dock crisp against its light background. */
+html[data-theme] body.ll-contact-page .ll-floating-header .ll-nav-dock {
+  border-color: var(--ll-menu-line) !important;
+  background: var(--ll-menu-surface) !important;
+  box-shadow: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
