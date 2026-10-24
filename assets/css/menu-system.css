@@ -2,12 +2,12 @@
 :root {
   --ll-menu-width: 438px;
   --ll-menu-height: 50px;
-  --ll-menu-gutter: 16px;
-  --ll-menu-surface: #202220;
+  --ll-menu-gutter: 14px;
+  --ll-menu-surface: #646464;
   --ll-menu-ink: #f4f2ec;
-  --ll-menu-line: rgba(244, 242, 236, 0.12);
+  --ll-menu-line: transparent;
   --ll-menu-hover: rgba(244, 242, 236, 0.08);
-  --ll-menu-header-top: max(16px, env(safe-area-inset-top));
+  --ll-menu-header-top: max(10px, env(safe-area-inset-top));
 }
 
 html body .ll-floating-header .ll-nav-dock {
@@ -25,8 +25,8 @@ html body .ll-floating-header .ll-nav-dock {
   margin: 0 !important;
   overflow: hidden !important;
   box-sizing: border-box !important;
-  border: 1px solid var(--ll-menu-line) !important;
-  border-radius: 4px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
   background: var(--ll-menu-surface) !important;
   color: var(--ll-menu-ink) !important;
   box-shadow: none !important;
