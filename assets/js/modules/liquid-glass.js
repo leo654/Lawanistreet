@@ -2,7 +2,7 @@ import liquidGL from "../../../node_modules/liquid-gl/liquidGL.js";
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const mobileViewport = window.matchMedia("(max-width: 820px), (pointer: coarse)");
-const glassTargetSelector = ".ll-contact-dock__primary";
+const glassTargetSelector = ".ll-nav-dock, .ll-contact-dock__primary";
 const hasGlassTargets = Boolean(document.querySelector(glassTargetSelector));
 const effects = [];
 

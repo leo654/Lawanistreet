@@ -4,11 +4,11 @@ html[data-theme] {
   --ll-menu-width: 438px;
   --ll-menu-height: 50px;
   --ll-menu-gutter: 14px;
-  --ll-menu-surface: #646464;
+  --ll-menu-surface: rgba(0, 0, 0, 0.6);
   --ll-menu-ink: #f4f2ec;
-  --ll-menu-line: transparent;
+  --ll-menu-line: rgba(244, 242, 236, 0.06);
   --ll-menu-hover: rgba(244, 242, 236, 0.08);
-  --ll-menu-header-top: max(10px, env(safe-area-inset-top));
+  --ll-menu-header-top: max(13px, env(safe-area-inset-top));
 }
 
 html body .ll-floating-header .ll-nav-dock {
@@ -26,14 +26,14 @@ html body .ll-floating-header .ll-nav-dock {
   margin: 0 !important;
   overflow: hidden !important;
   box-sizing: border-box !important;
-  border: 0 !important;
+  border: 1px solid var(--ll-menu-line) !important;
   border-radius: 0 !important;
   background: var(--ll-menu-surface) !important;
   color: var(--ll-menu-ink) !important;
   box-shadow: none !important;
   transform: translateX(-50%) !important;
-  -webkit-backdrop-filter: none !important;
-  backdrop-filter: none !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  backdrop-filter: blur(4px) !important;
 }
 
 html body .ll-floating-header .ll-nav-dock > :is(.ll-nav-dock__brand, .ll-nav-toggle) {
@@ -143,14 +143,14 @@ html[data-theme] body .ll-mobile-menu {
   max-width: none;
   margin: 0 !important;
   overflow-x: hidden;
-  border: 0 !important;
+  border: 1px solid var(--ll-menu-line) !important;
   border-radius: 0 !important;
   background: var(--ll-menu-surface) !important;
   color: var(--ll-menu-ink) !important;
   box-shadow: none !important;
   transform: translate(-50%, -8px) !important;
-  -webkit-backdrop-filter: none !important;
-  backdrop-filter: none !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  backdrop-filter: blur(4px) !important;
 }
 
 html body .ll-mobile-menu.is-open {
