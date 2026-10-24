@@ -122,15 +122,17 @@ html body .ll-floating-header .ll-nav-toggle[aria-expanded="true"] .ll-nav-toggl
 }
 
 html body .ll-floating-header .ll-nav-toggle:not([aria-expanded="true"]):is(:hover, :focus-visible) .ll-nav-toggle__line--1 {
-  transform: translateX(1px) scaleX(0.86);
+  transform: translateY(5px) rotate(45deg);
 }
 
 html body .ll-floating-header .ll-nav-toggle:not([aria-expanded="true"]):is(:hover, :focus-visible) .ll-nav-toggle__line--2 {
-  transform: scaleX(0.68);
+  transform: translateX(-3px) scaleX(0.7);
+  transition-delay: 35ms;
 }
 
 html body .ll-floating-header .ll-nav-toggle:not([aria-expanded="true"]):is(:hover, :focus-visible) .ll-nav-toggle__line--3 {
-  transform: translateX(-1px) scaleX(0.86);
+  transform: translateY(-5px) rotate(-45deg);
+  transition-delay: 70ms;
 }
 
 html body .ll-floating-header .ll-nav-toggle:is(:hover, :focus-visible),
@@ -184,6 +186,14 @@ html body .ll-mobile-menu .ll-menu-row:is(:hover, :focus-visible),
 html body .ll-mobile-menu .ll-menu-row[aria-current="page"] {
   background: var(--ll-menu-hover) !important;
   color: var(--ll-menu-ink) !important;
+}
+
+html body .ll-mobile-menu .ll-menu-row > span:first-child {
+  transition: transform 220ms var(--ll-menu-motion-ease);
+}
+
+html body .ll-mobile-menu .ll-menu-row:is(:hover, :focus-visible) > span:first-child {
+  transform: translateX(3px);
 }
 
 html body .ll-mobile-menu .ll-menu-group__items {
