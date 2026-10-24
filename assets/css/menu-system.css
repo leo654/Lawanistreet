@@ -1,5 +1,6 @@
 /* Shared navigation source of truth. Imported last by every site-page entry. */
-:root {
+:root,
+html[data-theme] {
   --ll-menu-width: 438px;
   --ll-menu-height: 50px;
   --ll-menu-gutter: 14px;
@@ -142,9 +143,8 @@ html[data-theme] body .ll-mobile-menu {
   max-width: none;
   margin: 0 !important;
   overflow-x: hidden;
-  border: 1px solid var(--ll-menu-line) !important;
-  border-top-color: rgba(244, 242, 236, 0.18) !important;
-  border-radius: 0 0 4px 4px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
   background: var(--ll-menu-surface) !important;
   color: var(--ll-menu-ink) !important;
   box-shadow: none !important;
