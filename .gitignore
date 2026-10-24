@@ -1,0 +1,7 @@
+/node_modules/
+/dist/
+/_site/
+/.playwright-mcp/
+/lawani-street-live-mirror/
+/lawani-street-live-mirror.zip
+/tmp/

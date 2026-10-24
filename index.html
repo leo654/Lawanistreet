@@ -1,66 +1,72 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" data-theme-mode="light" data-theme="light">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="theme-color" content="#181a19">
+    <meta name="theme-color" content="#efeee8">
     <meta name="description" content="Lawani St is an independent creative studio building distinctive identities, digital products, and experiences.">
     <meta name="author" content="Lawani St">
     <meta name="robots" content="index, follow">
 
     <title>Lawani St | Independent Creative Studio</title>
-    <link rel="canonical" href="https://lawanistreet.com/">
+    <link rel="canonical" href="https://leo654.github.io/lawani-street/">
     <meta property="og:title" content="Lawani St | Independent Creative Studio">
     <meta property="og:description" content="Distinctive identities, digital products, and experiences for ambitious brands.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://lawanistreet.com/">
-    <meta property="og:image" content="https://lawanistreet.com/assets/img/picture/kicksjoint/kjbg.png">
-    <meta property="og:image:width" content="5367">
-    <meta property="og:image:height" content="2795">
+    <meta property="og:url" content="https://leo654.github.io/lawani-street/">
     <meta property="og:site_name" content="Lawani St">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Lawani St | Independent Creative Studio">
     <meta name="twitter:description" content="Distinctive identities, digital products, and experiences for ambitious brands.">
-    <meta name="twitter:image" content="https://lawanistreet.com/assets/img/picture/kicksjoint/kjbg.png">
-
-    <link rel="shortcut icon" href="assets/img/fav.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicons/site.webmanifest">
-    <link rel="preload" href="assets/fonts/GridlitePEVFWeb-All.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/fonts/AuxMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
-     <!-- <link rel="preload" href="assets/img/me.gif" as="image" type="image/png" fetchpriority="high"> -->
-
+    <link rel="shortcut icon" href="./assets/media/fav-EAe0la2u.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/media/apple-touch-icon-CO_I9BEC.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/media/favicon-32x32-W3W6bYt6.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/media/favicon-16x16-CEw2wVgT.png">
+    <link rel="manifest" href="./assets/media/site-Bm5dm1HD.webmanifest">
+    <link rel="preload" href="./assets/media/GridlitePEVFWeb-All-yRipPUrG.woff2" as="font" type="font/woff2" crossorigin>
 
     <script>
-      document.documentElement.classList.replace("no-js", "js");
       (function () {
-        var theme = "dark";
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        var entering = false;
         try {
-          var storedTheme = localStorage.getItem("ll-theme");
-          theme =
-            storedTheme === "light" || storedTheme === "dark"
-              ? storedTheme
-              : (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
-        } catch (error) {}
-        document.documentElement.setAttribute("data-theme", theme);
+          entering = window.sessionStorage.getItem("ll-page-transition") === "1";
+        } catch (error) {
+          console.warn("The page transition state could not be read.", error);
+        }
+        if (!entering) document.documentElement.classList.add("home-preloader-active");
       })();
     </script>
-    <link rel="stylesheet" href="assets/css/lamalama-ui.css?v=20260820-dock-static-text-1">
-    <link rel="stylesheet" href="assets/css/hero-showreel.css?v=20260814-stable-hero-video-1">
-    <link rel="stylesheet" href="assets/css/work-lama.css?v=20260812-project-row-align-1">
+
+    <script type="module" src="./assets/js/site-entry.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/css/entries/home.css">
   </head>
 
-  <body class="home-index">
-    <a class="ll-skip-link" href="#main-content">Skip to main content</a>
+  <body id="top" class="home-index">
+    <div class="home-page-loader" data-home-loader data-liquid-ignore aria-hidden="true">
+      <div class="home-page-loader__frame">
+        <div class="home-page-loader__top">
+          <span class="home-page-loader__brand">Hello</span>
+          <span class="home-page-loader__edition">London / Everywhere</span>
+        </div>
+        <div class="home-page-loader__center">
+          <span class="home-page-loader__counter">00%</span>
+          <span class="home-page-loader__mark">L</span>
+        </div>
+        <div class="home-page-loader__bottom">
+          <span>All in or not at all</span>
+          <span class="home-page-loader__count">00 / 100</span>
+        </div>
+        <div class="home-page-loader__track"><span></span></div>
+      </div>
+    </div>
 
     <header class="ll-floating-header" data-ll-header>
       <div class="ll-nav-dock">
         <a class="ll-nav-dock__brand ll-button ll-button--square" href="index.html" aria-label="Lawani St home">
-          <span aria-hidden="true">L:</span>
+          <span aria-hidden="true">L</span>
         </a>
-        <p class="ll-nav-dock__note" data-ll-nav-note>Cases with teeth</p>
+        <p class="ll-nav-dock__note" data-ll-nav-note>Ambition, made real</p>
         <button
           class="ll-nav-toggle ll-button ll-button--square"
           type="button"
@@ -69,63 +75,28 @@
           aria-label="Open navigation"
           data-ll-menu-toggle
         >
-          <svg class="ll-icon ll-nav-toggle__icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path class="ll-icon__menu-line ll-icon__menu-line--top" d="M5 6.5h14"></path>
-            <path class="ll-icon__menu-line ll-icon__menu-line--middle" d="M5 12h14"></path>
-            <path class="ll-icon__menu-line ll-icon__menu-line--bottom" d="M5 17.5h14"></path>
-          </svg>
+          <span class="ll-nav-toggle__lines" aria-hidden="true">
+            <i class="ll-nav-toggle__line ll-nav-toggle__line--1"></i>
+            <i class="ll-nav-toggle__line ll-nav-toggle__line--2"></i>
+            <i class="ll-nav-toggle__line ll-nav-toggle__line--3"></i>
+          </span>
           <span class="ll-visually-hidden" data-ll-menu-label>Menu</span>
         </button>
       </div>
 
       <div class="ll-contact-dock">
-        <a class="ll-contact-dock__primary ll-button ll-button--media" target="_blank" href="https://calendly.com/leonardlawani/30min?month=2026-08">
+        <a class="ll-contact-dock__primary ll-button ll-button--media" href="pitchdeck.html" data-ll-pitchdeck-open>
           <span class="ll-contact-dock__portrait">
-            <img src="assets/img/me.gif" alt="" width="500" height="594">
+            <img src="./assets/media/me-BaibXmoJ.gif" alt="" width="500" height="594">
           </span>
-          <span>Get in touch</span>
+          <span>Meet the designer </span>
         </a>
       
-        <div class="ll-contact-dock__pitch-module" data-ll-dock-group>
-          <button
-            class="ll-contact-dock__pitch ll-button"
-            type="button"
-            aria-controls="ll-pitch-dock-preview"
-            aria-expanded="false"
-            data-ll-dock-toggle
-          >
-            <span>View Resume</span>
-            <span class="ll-contact-dock__state" aria-hidden="true" data-ll-dock-state>( + )</span>
-          </button>
-          <a
-            class="ll-contact-dock__preview ll-contact-dock__pitch-preview"
-            id="ll-pitch-dock-preview"
-            href="pitchdeck.html"
-            aria-hidden="true"
-            tabindex="-1"
-            data-ll-dock-preview
-            aria-label="Open the full Lawani St sales pitch"
-          >
-            <span class="ll-mini-deck" aria-hidden="true">
-              <span class="ll-mini-deck__sheet ll-mini-deck__sheet--back"></span>
-              <span class="ll-mini-deck__sheet ll-mini-deck__sheet--middle"></span>
-              <span class="ll-mini-deck__sheet ll-mini-deck__sheet--front">
-                <span class="ll-mini-deck__kicker">[ Lawani St. / 2026 ]</span>
-                <strong>Senior by<br>default.</strong>
-                <span class="ll-mini-deck__copy">Strategy, identity and digital experiences—direct, collaborative and built to move.</span>
-                <span class="ll-mini-deck__images">
-                  <img src="assets/img/me.gif" alt="" width="500" height="594">
-                  <img src="assets/img/ademi1.png" alt="" width="1000" height="1000">
-                  <img src="assets/img/tyol1.png" alt="" width="1834" height="1032">
-                </span>
-              </span>
-            </span>
-          </a>
-        </div>
+       
       </div>
     </header>
 
-    <div class="ll-mobile-menu" id="ll-mobile-menu" aria-hidden="true" data-ll-mobile-menu>
+    <div class="ll-mobile-menu" id="ll-mobile-menu" aria-hidden="true" inert data-ll-mobile-menu>
       <nav class="ll-mobile-menu__nav" aria-label="Site navigation">
         <a class="ll-menu-row" href="work.html">
           <span>Work</span>
@@ -142,34 +113,32 @@
             <span>Expertise</span>
             <span class="ll-menu-group__plus" aria-hidden="true"><i></i><i></i></span>
           </button>
-          <div class="ll-menu-group__items" id="ll-menu-services" aria-hidden="true" data-ll-submenu>
+          <div class="ll-menu-group__items" id="ll-menu-services" aria-hidden="true" inert data-ll-submenu>
             <div>
               <a href="#service-branding"><span>Branding</span><span>01</span></a>
-              <a href="#service-digital"><span>Digital</span><span>02</span></a>
+              <a href="#service-digital-design"><span>Digital Design</span><span>02</span></a>
               <a href="#service-marketing"><span>Marketing</span><span>03</span></a>
             </div>
           </div>
         </div>
 
-        <a class="ll-menu-row" href="about-me.html">
-          <span>About Me</span>
-        </a> 
-        <!-- <a class="ll-menu-row" href="mailto:accounts@lawani.st?subject=Careers%20at%20Lawani%20St">
+ 
+        <!-- <a class="ll-menu-row" href="mailto:talktolawanistreet@gmail.com?subject=Careers%20at%20Lawani%20St">
           <span>Careers</span>
           <span class="ll-menu-group__plus" aria-hidden="true"><i></i><i></i></span>
         </a> -->
-        <a class="ll-menu-row" href="vcard.html">
+        <a class="ll-menu-row" href="contact.html">
           <span>Contact</span>
         </a>
       </nav>
 
       <div class="ll-mobile-menu__actions">
 
-        
-        <a class="ll-mobile-menu__pitch ll-button" href="pitchdeck.html">Sales pitch</a>
+
+        <a class="ll-mobile-menu__pitch ll-button" href="pitchdeck.html">Resume</a>
         <div>
-          <a class="ll-mobile-menu__cta ll-button" href="mailto:accounts@lawani.st?subject=Schedule%20a%20call">Schedule a call</a>
-          <a class="ll-mobile-menu__cta ll-button" href="vcard.html">Start a project</a>
+          <a class="ll-mobile-menu__cta ll-button" href="mailto:talktolawanistreet@gmail.com?subject=Schedule%20a%20call">Schedule call</a>
+          <a class="ll-mobile-menu__cta ll-button" href="contact.html">Start project</a>
         </div>
       </div>
     </div>
@@ -177,7 +146,7 @@
     <a class="ll-menu-reel" href="team.html" aria-label="Meet the Lawani St studio" data-ll-menu-reel>
       <span class="ll-menu-reel__media" aria-hidden="true">
         <video muted loop playsinline preload="none" data-ll-menu-reel-video>
-          <source src="assets/video/stuff.mp4" type="video/mp4">
+          <source src="./assets/media/stuff-DQVpiR1I.mp4" type="video/mp4">
         </video>
       </span>
       <span class="ll-menu-reel__label">Lawani Street</span>
@@ -188,62 +157,57 @@
         <button class="ll-home-hero__media" type="button" aria-label="Open hero showreel" data-ll-hero-open>
           <video
             data-ll-hero-video
-            preload="metadata"
-            autoplay
+            preload="none"
             muted
             loop
             playsinline
-            poster="assets/img/picture/kicksjoint/kjbg.png"
           >
-            <source src="assets/video/hero.mp4" type="video/mp4">
+            <source src="./assets/media/hero-Dwri7hyj.mp4" type="video/mp4">
           </video>
-          <span class="ll-home-hero__play-cue" aria-hidden="true"><i></i><b>Play film</b></span>
+          <span class="ll-home-hero__play-cue" aria-hidden="true"><i></i><b>Play reel</b></span>
         </button>
+       
         <div class="ll-home-hero__wash" aria-hidden="true"></div>
-        <div class="ll-home-hero__pulse" aria-hidden="true"></div>
-        <canvas class="ll-home-hero__halftone" aria-hidden="true" data-ll-halftone data-ll-halftone-mode="hero"></canvas>
 
         <div class="ll-home-hero__content">
           <!-- <p class="ll-hero__eyebrow">[ This is Lawani St. ]</p> -->
 
           <div class="ll-home-hero__message">
             <h1 id="ll-hero-title">
-              <span>L: </span>
-              <!-- <span>brands get it.</span> -->
+              <span aria-hidden="true">L</span>
+              <span class="ll-visually-hidden">Lawani St — independent creative studio</span>
             </h1>
-             <!-- <p>Leonard lawani</p> -->
+            <p class="ll-home-hero__scroll-hint">Scroll down</p>
           </div>
 
-          <div class="ll-home-hero__rail" aria-label="Studio information">
+          <div class="ll-home-hero__rail" aria-label="Studio information" >
             <span class="ll-home-hero__rail-line" aria-hidden="true"></span>
             <span class="ll-home-hero__stat">200+ Projects</span>
             <span class="ll-home-hero__base">London based</span>
             <time datetime="" data-ll-clock>00 : 00 : 00</time>
-            <span class="ll-home-hero__follow">Follow us</span>
+            <span class="ll-home-hero__follow">Let's connect</span>
             <a class="ll-home-hero__social-link ll-home-hero__social-link--instagram" href="https://www.instagram.com/lawani.st" target="_blank" rel="noopener noreferrer">Instagram +</a>
-            <a class="ll-home-hero__social-link ll-home-hero__social-link--linkedin" href="https://www.linkedin.com/company/lawani-st" target="_blank" rel="noopener noreferrer">LinkedIn +</a>
+            <a class="ll-home-hero__social-link ll-home-hero__social-link--linkedin" href="https://www.linkedin.com/in/leonardlawani/" target="_blank" rel="noopener noreferrer">LinkedIn +</a>
             <button
-              class="ll-theme-toggle ll-theme-toggle--footer ll-theme-toggle--hero"
+              class="ll-theme-toggle ll-sound-toggle ll-theme-toggle--footer ll-theme-toggle--hero"
               type="button"
-              aria-label="Switch to light theme"
+              aria-label="Sound Off. Turn sound on."
               aria-pressed="false"
-              data-ll-theme-toggle
-            >
-              <span class="ll-theme-toggle__choice ll-theme-toggle__choice--dark" aria-hidden="true">DK</span>
-              <span class="ll-theme-toggle__track" aria-hidden="true"><i></i></span>
-              <span class="ll-theme-toggle__choice ll-theme-toggle__choice--light" aria-hidden="true">LT</span>
-              <span class="ll-visually-hidden" data-ll-theme-label>Dark</span>
+              data-ll-sound-toggle >
+      <span class="ll-sound-toggle__choice ll-sound-toggle__choice--off" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 10v4h4l5 4V6l-5 4H4z"></path><path d="m17 9 5 6m0-6-5 6"></path></svg></span>
+              <span class="ll-sound-toggle__choice ll-sound-toggle__choice--on" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 10v4h4l5 4V6l-5 4H4z"></path><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"></path></svg></span>
+              <span class="ll-sound-toggle__indicator" aria-hidden="true"></span>
             </button>
           </div>
         </div>
       </section>
 
-      <section class="ll-hero-showreel" aria-label="Hero showreel" aria-hidden="true" data-ll-hero-showreel inert>
-        <video class="ll-hero-showreel__video" playsinline preload="metadata" data-ll-hero-showreel-video>
-          <source src="assets/video/hero.mp4" type="video/mp4">
+      <section class="ll-hero-showreel" role="dialog" aria-modal="true" aria-label="Hero showreel" aria-hidden="true" data-ll-hero-showreel inert>
+        <video class="ll-hero-showreel__video" playsinline preload="none" data-ll-hero-showreel-video>
+          <source src="./assets/media/hero-Dwri7hyj.mp4" type="video/mp4">
         </video>
         <button class="ll-hero-showreel__close" type="button" aria-label="Close hero showreel" data-ll-hero-close>
-          <span>Cls</span>
+          <span>Close</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"></path></svg>
         </button>
         <div class="ll-hero-showreel__controls">
@@ -258,29 +222,32 @@
           </div>
         </div>
       </section>
-      <section class="ll-work" id="work" aria-label="Featured work" data-ll-section-note="Cases with teeth" >
+
+      <section class="ll-work" id="work" aria-label="Featured work" data-ll-section-note="Cases with teeth"  >
         <div class="ll-work-intro">
           <p class="ll-label">[ Featured work ]</p>
         </div>
 
-        <div class="lwa-archive" aria-label="Featured work archive">
+
+        <!-- @include:project-archive:start -->
+<div class="lwa-archive" aria-label="Featured work archive">
           <article class="lwa-project" data-work-item data-categories="branding experience digital">
             <button class="lwa-project__toggle" type="button" aria-expanded="false" aria-controls="home-work-kicksjoint" data-work-toggle>
               <span class="lwa-project__title">Kicksjoint</span>
               <span class="lwa-project__tags"><span>Branding</span><span>Experience</span><span>Digital</span></span>
               <span class="lwa-project__state" data-work-state>( + )</span>
               <span class="lwa-project__rail" aria-hidden="true">
-                <img src="assets/img/kj1.png" alt="" width="1615" height="1615" loading="eager" decoding="async">
-                <img src="assets/img/kj5.png" alt="" width="1138" height="1138" loading="eager" decoding="async">
-                <img src="assets/img/case2.png" alt="" width="2684" height="1509" loading="eager" decoding="async">
-                <img src="assets/img/kj2.png" alt="" width="2684" height="1509" loading="eager" decoding="async">
+                <img src="./assets/media/kj1-Cq26eBnf.webp" alt="" width="1615" height="1615" loading="eager" decoding="async">
+                <img src="./assets/media/kj5-CmZihZgy.webp" alt="" width="1138" height="1138" loading="eager" decoding="async">
+                <img src="./assets/media/case2-0UqaKcFz.webp" alt="" width="2684" height="1509" loading="eager" decoding="async">
+                <img src="./assets/media/kj2-DpnsDMuo.webp" alt="" width="2684" height="1509" loading="eager" decoding="async">
               </span>
               <span class="lwa-project__summary-copy">A culture-led sneaker marketplace identity built to move confidently across campaigns, commerce, and community.</span>
             </button>
             <div class="lwa-project__detail" id="home-work-kicksjoint" aria-hidden="true" data-work-detail>
               <div class="lwa-project__detail-inner">
-                <div class="lwa-project__summary"><div class="lwa-project__actions"><a class="ll-button" href="kicksjoint.html"><span>View case</span><span aria-hidden="true">↗</span></a><a class="ll-button" href="vcard.html"><span>Start a project</span><span aria-hidden="true">↗</span></a></div></div>
-                <div class="lwa-project__gallery" data-work-gallery tabindex="0" aria-label="Kicksjoint project images"><figure><img src="assets/img/kj1.png" alt="Kicksjoint identity artwork" loading="lazy" decoding="async"></figure><figure><img src="assets/img/kj5.png" alt="Kicksjoint campaign artwork" loading="lazy" decoding="async"></figure><figure><img src="assets/img/case2.png" alt="Kicksjoint digital artwork" loading="lazy" decoding="async"></figure><figure><img src="assets/img/kj2.png" alt="Kicksjoint brand application" loading="lazy" decoding="async"></figure></div>
+                <div class="lwa-project__summary"><div class="lwa-project__actions"><a class="ll-button" href="kicksjoint.html"><span>View case</span><svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a><a class="ll-button" href="contact.html"><span>Start project</span><svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div>
+                <div class="lwa-project__gallery" data-work-gallery tabindex="0" aria-label="Kicksjoint project images"><figure><img src="./assets/media/kj1-Cq26eBnf.webp" alt="Kicksjoint identity artwork" loading="lazy" decoding="async" width="1615" height="1615"></figure><figure><img src="./assets/media/kj5-CmZihZgy.webp" alt="Kicksjoint campaign artwork" loading="lazy" decoding="async" width="1138" height="1138"></figure><figure><img src="./assets/media/case2-0UqaKcFz.webp" alt="Kicksjoint digital artwork" loading="lazy" decoding="async" width="2684" height="1509"></figure><figure><img src="./assets/media/kj2-DpnsDMuo.webp" alt="Kicksjoint brand application" loading="lazy" decoding="async" width="2684" height="1509"></figure></div>
               </div>
             </div>
           </article>
@@ -290,10 +257,10 @@
               <span class="lwa-project__title">Ademi</span>
               <span class="lwa-project__tags"><span>Branding</span><span>Campaign</span><span>Experience</span></span>
               <span class="lwa-project__state" data-work-state>( + )</span>
-              <span class="lwa-project__rail" aria-hidden="true"><img src="assets/img/ademi1.png" alt="" loading="lazy" decoding="async"><img src="assets/img/picture/ademi/1.png" alt="" loading="lazy" decoding="async"><img src="assets/img/ademi2.png" alt="" loading="lazy" decoding="async"><img src="assets/img/ademi3.png" alt="" loading="lazy" decoding="async"></span>
+              <span class="lwa-project__rail" aria-hidden="true"><img src="./assets/media/ademi1-JCu3hbMF.png" alt="" loading="lazy" decoding="async" width="866" height="866"><img src="./assets/media/1-BE4PKmdI.webp" alt="" loading="lazy" decoding="async" width="1591" height="1591"><img src="./assets/media/ademi2-BXo_XvMc.webp" alt="" loading="lazy" decoding="async" width="1036" height="1035"><img src="./assets/media/ademi3-Jy-K9aFV.webp" alt="" loading="lazy" decoding="async" width="1766" height="989"></span>
               <span class="lwa-project__summary-copy">An expressive identity system that gives Ademi a confident rhythm across campaigns, product moments, and digital storytelling.</span>
             </button>
-            <div class="lwa-project__detail" id="home-work-ademi" aria-hidden="true" data-work-detail><div class="lwa-project__detail-inner"><div class="lwa-project__summary"><div class="lwa-project__actions"><a class="ll-button" href="ademi.html"><span>View case</span><span aria-hidden="true">↗</span></a><a class="ll-button" href="vcard.html"><span>Start a project</span><span aria-hidden="true">↗</span></a></div></div><div class="lwa-project__gallery" data-work-gallery tabindex="0" aria-label="Ademi project images"><figure><img src="assets/img/ademi1.png" alt="Ademi campaign artwork" loading="lazy" decoding="async"></figure><figure><img src="assets/img/picture/ademi/1.png" alt="Ademi identity artwork" loading="lazy" decoding="async"></figure><figure><img src="assets/img/ademi2.png" alt="Ademi visual system" loading="lazy" decoding="async"></figure><figure><img src="assets/img/ademi3.png" alt="Ademi brand application" loading="lazy" decoding="async"></figure></div></div></div>
+            <div class="lwa-project__detail" id="home-work-ademi" aria-hidden="true" data-work-detail><div class="lwa-project__detail-inner"><div class="lwa-project__summary"><div class="lwa-project__actions"><a class="ll-button" href="ademi.html"><span>View case</span><svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a><a class="ll-button" href="contact.html"><span>Start project</span><svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div><div class="lwa-project__gallery" data-work-gallery tabindex="0" aria-label="Ademi project images"><figure><img src="./assets/media/ademi1-JCu3hbMF.png" alt="Ademi campaign artwork" loading="lazy" decoding="async" width="866" height="866"></figure><figure><img src="./assets/media/1-BE4PKmdI.webp" alt="Ademi identity artwork" loading="lazy" decoding="async" width="1591" height="1591"></figure><figure><img src="./assets/media/ademi2-BXo_XvMc.webp" alt="Ademi visual system" loading="lazy" decoding="async" width="1036" height="1035"></figure><figure><img src="./assets/media/ademi3-Jy-K9aFV.webp" alt="Ademi brand application" loading="lazy" decoding="async" width="1766" height="989"></figure></div></div></div>
           </article>
 
           <article class="lwa-project" data-work-item data-categories="strategy branding digital">
@@ -301,10 +268,10 @@
               <span class="lwa-project__title">EnterScale</span>
               <span class="lwa-project__tags"><span>Strategy</span><span>Branding</span><span>Digital</span></span>
               <span class="lwa-project__state" data-work-state>( + )</span>
-              <span class="lwa-project__rail" aria-hidden="true"><img src="assets/img/ent.png" alt="" loading="lazy" decoding="async"><img src="assets/img/picture/enterscale/right.png" alt="" loading="lazy" decoding="async"><img src="assets/img/picture/enterscale/into.png" alt="" loading="lazy" decoding="async"><img src="assets/img/picture/enterscale/10b.png" alt="" loading="lazy" decoding="async"></span>
+              <span class="lwa-project__rail" aria-hidden="true"><img src="./assets/media/ent-BRcqzdOq.webp" alt="" loading="lazy" decoding="async" width="1400" height="1400"><img src="./assets/media/right-CgRB2XbA.webp" alt="" loading="lazy" decoding="async" width="1644" height="1644"><img src="./assets/media/into-4CTWeTdl.webp" alt="" loading="lazy" decoding="async" width="5367" height="2795"><img src="./assets/media/10b-4ilySQQw.webp" alt="" loading="lazy" decoding="async" width="2925" height="1644"></span>
               <span class="lwa-project__summary-copy">A strategy-led identity for a growth partner, turning operational clarity into a sharp and scalable brand system.</span>
             </button>
-            <div class="lwa-project__detail" id="home-work-enterscale" aria-hidden="true" data-work-detail><div class="lwa-project__detail-inner"><div class="lwa-project__summary"><div class="lwa-project__actions"><a class="ll-button" href="enterscale.html"><span>View case</span><span aria-hidden="true">↗</span></a><a class="ll-button" href="vcard.html"><span>Start a project</span><span aria-hidden="true">↗</span></a></div></div><div class="lwa-project__gallery" data-work-gallery tabindex="0" aria-label="EnterScale project images"><figure><img src="assets/img/ent.png" alt="EnterScale identity artwork" loading="lazy" decoding="async"></figure><figure><img src="assets/img/picture/enterscale/right.png" alt="EnterScale brand application" loading="lazy" decoding="async"></figure><figure><img src="assets/img/picture/enterscale/into.png" alt="EnterScale digital experience" loading="lazy" decoding="async"></figure><figure><img src="assets/img/picture/enterscale/10b.png" alt="EnterScale campaign artwork" loading="lazy" decoding="async"></figure></div></div></div>
+            <div class="lwa-project__detail" id="home-work-enterscale" aria-hidden="true" data-work-detail><div class="lwa-project__detail-inner"><div class="lwa-project__summary"><div class="lwa-project__actions"><a class="ll-button" href="enterscale.html"><span>View case</span><svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a><a class="ll-button" href="contact.html"><span>Start project</span><svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div><div class="lwa-project__gallery" data-work-gallery tabindex="0" aria-label="EnterScale project images"><figure><img src="./assets/media/ent-BRcqzdOq.webp" alt="EnterScale identity artwork" loading="lazy" decoding="async" width="1400" height="1400"></figure><figure><img src="./assets/media/right-CgRB2XbA.webp" alt="EnterScale brand application" loading="lazy" decoding="async" width="1644" height="1644"></figure><figure><img src="./assets/media/into-4CTWeTdl.webp" alt="EnterScale digital experience" loading="lazy" decoding="async" width="5367" height="2795"></figure><figure><img src="./assets/media/10b-4ilySQQw.webp" alt="EnterScale campaign artwork" loading="lazy" decoding="async" width="2925" height="1644"></figure></div></div></div>
           </article>
 
           <article class="lwa-project" data-work-item data-categories="branding digital product">
@@ -312,10 +279,10 @@
               <span class="lwa-project__title">VatuG</span>
               <span class="lwa-project__tags"><span>Branding</span><span>Digital</span><span>Product</span></span>
               <span class="lwa-project__state" data-work-state>( + )</span>
-              <span class="lwa-project__rail" aria-hidden="true"><img src="assets/img/vatug.png" alt="" loading="lazy" decoding="async"><img src="assets/img/picture/vatug/right.png" alt="" loading="lazy" decoding="async"><img src="assets/img/picture/vatug/left.png" alt="" loading="lazy" decoding="async"><img src="assets/img/picture/vatug/bg.png" alt="" loading="lazy" decoding="async"></span>
+              <span class="lwa-project__rail" aria-hidden="true"><img src="./assets/media/vatug-CYO_Xzgn.png" alt="" loading="lazy" decoding="async" width="1178" height="663"><img src="./assets/media/right-CZEB_MTx.png" alt="" loading="lazy" decoding="async" width="1032" height="1032"><img src="./assets/media/left-CkKPcVMZ.png" alt="" loading="lazy" decoding="async" width="2868" height="2868"><img src="./assets/media/bg-DJNQ3AR1.webp" alt="" loading="lazy" decoding="async" width="5367" height="2795"></span>
               <span class="lwa-project__summary-copy">A flexible identity and digital toolkit that gives VatuG more clarity, consistency, and confidence at every customer touchpoint.</span>
             </button>
-            <div class="lwa-project__detail" id="home-work-vatug" aria-hidden="true" data-work-detail><div class="lwa-project__detail-inner"><div class="lwa-project__summary"><div class="lwa-project__actions"><a class="ll-button" href="vatug.html"><span>View case</span><span aria-hidden="true">↗</span></a><a class="ll-button" href="vcard.html"><span>Start a project</span><span aria-hidden="true">↗</span></a></div></div><div class="lwa-project__gallery" data-work-gallery tabindex="0" aria-label="VatuG project images"><figure><img src="assets/img/vatug.png" alt="VatuG identity artwork" loading="lazy" decoding="async"></figure><figure><img src="assets/img/picture/vatug/right.png" alt="VatuG digital product" loading="lazy" decoding="async"></figure><figure><img src="assets/img/picture/vatug/left.png" alt="VatuG brand application" loading="lazy" decoding="async"></figure><figure><img src="assets/img/picture/vatug/bg.png" alt="VatuG campaign artwork" loading="lazy" decoding="async"></figure></div></div></div>
+            <div class="lwa-project__detail" id="home-work-vatug" aria-hidden="true" data-work-detail><div class="lwa-project__detail-inner"><div class="lwa-project__summary"><div class="lwa-project__actions"><a class="ll-button" href="vatug.html"><span>View case</span><svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a><a class="ll-button" href="contact.html"><span>Start project</span><svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div><div class="lwa-project__gallery" data-work-gallery tabindex="0" aria-label="VatuG project images"><figure><img src="./assets/media/vatug-CYO_Xzgn.png" alt="VatuG identity artwork" loading="lazy" decoding="async" width="1178" height="663"></figure><figure><img src="./assets/media/right-CZEB_MTx.png" alt="VatuG digital product" loading="lazy" decoding="async" width="1032" height="1032"></figure><figure><img src="./assets/media/left-CkKPcVMZ.png" alt="VatuG brand application" loading="lazy" decoding="async" width="2868" height="2868"></figure><figure><img src="./assets/media/bg-DJNQ3AR1.webp" alt="VatuG campaign artwork" loading="lazy" decoding="async" width="5367" height="2795"></figure></div></div></div>
           </article>
 
           <article class="lwa-project" data-work-item data-categories="strategy experience product">
@@ -323,10 +290,10 @@
               <span class="lwa-project__title">Doorstep Logistics</span>
               <span class="lwa-project__tags"><span>Strategy</span><span>Experience</span><span>Product</span></span>
               <span class="lwa-project__state" data-work-state>( + )</span>
-              <span class="lwa-project__rail" aria-hidden="true"><img src="assets/img/picture/dsl/Artboard22.png" alt="" loading="lazy" decoding="async"><img src="assets/img/picture/dsl/ui.png" alt="" loading="lazy" decoding="async"><img src="assets/img/picture/dsl/21.png" alt="" loading="lazy" decoding="async"><img src="assets/img/picture/dsl/laptop.png" alt="" loading="lazy" decoding="async"></span>
+              <span class="lwa-project__rail" aria-hidden="true"><img src="./assets/media/Artboard22-CwtQ9zpa.png" alt="" loading="lazy" decoding="async" width="2684" height="1509"><img src="./assets/media/ui-a0uQBlac.png" alt="" loading="lazy" decoding="async" width="1097" height="1387"><img src="./assets/media/21-Ddg6hQJ9.webp" alt="" loading="lazy" decoding="async" width="2684" height="1509"><img src="./assets/media/laptop-D-H7bZW3.png" alt="" loading="lazy" decoding="async" width="5465" height="3057"></span>
               <span class="lwa-project__summary-copy">A service and product experience that makes logistics feel simpler, more transparent, and easier to trust from booking to delivery.</span>
             </button>
-            <div class="lwa-project__detail" id="home-work-dsl" aria-hidden="true" data-work-detail><div class="lwa-project__detail-inner"><div class="lwa-project__summary"><div class="lwa-project__actions"><a class="ll-button" href="dsl.html"><span>View case</span><span aria-hidden="true">↗</span></a><a class="ll-button" href="vcard.html"><span>Start a project</span><span aria-hidden="true">↗</span></a></div></div><div class="lwa-project__gallery" data-work-gallery tabindex="0" aria-label="Doorstep Logistics project images"><figure><img src="assets/img/picture/dsl/Artboard22.png" alt="Doorstep Logistics identity" loading="lazy" decoding="async"></figure><figure><img src="assets/img/picture/dsl/ui.png" alt="Doorstep Logistics interface" loading="lazy" decoding="async"></figure><figure><img src="assets/img/picture/dsl/21.png" alt="Doorstep Logistics product experience" loading="lazy" decoding="async"></figure><figure><img src="assets/img/picture/dsl/laptop.png" alt="Doorstep Logistics website" loading="lazy" decoding="async"></figure></div></div></div>
+            <div class="lwa-project__detail" id="home-work-dsl" aria-hidden="true" data-work-detail><div class="lwa-project__detail-inner"><div class="lwa-project__summary"><div class="lwa-project__actions"><a class="ll-button" href="dsl.html"><span>View case</span><svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a><a class="ll-button" href="contact.html"><span>Start project</span><svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div><div class="lwa-project__gallery" data-work-gallery tabindex="0" aria-label="Doorstep Logistics project images"><figure><img src="./assets/media/Artboard22-CwtQ9zpa.png" alt="Doorstep Logistics identity" loading="lazy" decoding="async" width="2684" height="1509"></figure><figure><img src="./assets/media/ui-a0uQBlac.png" alt="Doorstep Logistics interface" loading="lazy" decoding="async" width="1097" height="1387"></figure><figure><img src="./assets/media/21-Ddg6hQJ9.webp" alt="Doorstep Logistics product experience" loading="lazy" decoding="async" width="2684" height="1509"></figure><figure><img src="./assets/media/laptop-D-H7bZW3.png" alt="Doorstep Logistics website" loading="lazy" decoding="async" width="5465" height="3057"></figure></div></div></div>
           </article>
 
           <article class="lwa-project" data-work-item data-categories="branding campaign content">
@@ -334,10 +301,10 @@
               <span class="lwa-project__title">TYOL</span>
               <span class="lwa-project__tags"><span>Branding</span><span>Campaign</span><span>Content</span></span>
               <span class="lwa-project__state" data-work-state>( + )</span>
-              <span class="lwa-project__rail" aria-hidden="true"><img src="assets/img/tyol.png" alt="" loading="lazy" decoding="async"><img src="assets/img/picture/tyol/2b.png" alt="" loading="lazy" decoding="async"><img src="assets/img/picture/tyol/1a.png" alt="" loading="lazy" decoding="async"><img src="assets/img/picture/tyol/bg.png" alt="" loading="lazy" decoding="async"></span>
-              <span class="lwa-project__summary-copy">A campaign world designed to make love feel visible, participatory, and culturally alive across content, events, and social moments.</span>
+              <span class="lwa-project__rail" aria-hidden="true"><img src="./assets/media/tyol-C7GGi9ne.png" alt="" loading="lazy" decoding="async" width="1509" height="1509"><img src="./assets/media/2b-CN9nfJV8.png" alt="" loading="lazy" decoding="async" width="1032" height="1032"><img src="./assets/media/1a-CV0NDyPR.png" alt="" loading="lazy" decoding="async" width="2270" height="2270"><img src="./assets/media/bg-CADNc8dW.webp" alt="" loading="lazy" decoding="async" width="5367" height="2795"></span>
+              <span class="lwa-project__summary-copy">A campaign world designed to make lagos feel visible, participatory, and culturally alive across content, events, and social moments.</span>
             </button>
-            <div class="lwa-project__detail" id="home-work-tyol" aria-hidden="true" data-work-detail><div class="lwa-project__detail-inner"><div class="lwa-project__summary"><div class="lwa-project__actions"><a class="ll-button" href="tyol.html"><span>View case</span><span aria-hidden="true">↗</span></a><a class="ll-button" href="vcard.html"><span>Start a project</span><span aria-hidden="true">↗</span></a></div></div><div class="lwa-project__gallery" data-work-gallery tabindex="0" aria-label="TYOL project images"><figure><img src="assets/img/tyol.png" alt="TYOL campaign artwork" loading="lazy" decoding="async"></figure><figure><img src="assets/img/picture/tyol/2b.png" alt="TYOL editorial artwork" loading="lazy" decoding="async"></figure><figure><img src="assets/img/picture/tyol/1a.png" alt="TYOL campaign landscape" loading="lazy" decoding="async"></figure><figure><img src="assets/img/picture/tyol/bg.png" alt="TYOL content system" loading="lazy" decoding="async"></figure></div></div></div>
+            <div class="lwa-project__detail" id="home-work-tyol" aria-hidden="true" data-work-detail><div class="lwa-project__detail-inner"><div class="lwa-project__summary"><div class="lwa-project__actions"><a class="ll-button" href="tyol.html"><span>View case</span><svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a><a class="ll-button" href="contact.html"><span>Start project</span><svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div><div class="lwa-project__gallery" data-work-gallery tabindex="0" aria-label="TYOL project images"><figure><img src="./assets/media/tyol-C7GGi9ne.png" alt="TYOL campaign artwork" loading="lazy" decoding="async" width="1509" height="1509"></figure><figure><img src="./assets/media/2b-CN9nfJV8.png" alt="TYOL editorial artwork" loading="lazy" decoding="async" width="1032" height="1032"></figure><figure><img src="./assets/media/1a-CV0NDyPR.png" alt="TYOL campaign landscape" loading="lazy" decoding="async" width="2270" height="2270"></figure><figure><img src="./assets/media/bg-CADNc8dW.webp" alt="TYOL content system" loading="lazy" decoding="async" width="5367" height="2795"></figure></div></div></div>
           </article>
 
           <article class="lwa-project" data-work-item data-categories="branding campaign content">
@@ -345,223 +312,200 @@
               <span class="lwa-project__title">Beat Per Minute</span>
               <span class="lwa-project__tags"><span>Branding</span><span>Campaign</span><span>Content</span></span>
               <span class="lwa-project__state" data-work-state>( + )</span>
-              <span class="lwa-project__rail" aria-hidden="true"><img src="assets/img/bpm2.png" alt="" loading="lazy" decoding="async"><img src="assets/img/dj1.png" alt="" loading="lazy" decoding="async"><img src="assets/img/dj2.png" alt="" loading="lazy" decoding="async"><img src="assets/img/bpm1.png" alt="" loading="lazy" decoding="async"></span>
+              <span class="lwa-project__rail" aria-hidden="true"><img src="./assets/media/bpm2-B-3U8Xip.webp" alt="" loading="lazy" decoding="async" width="1400" height="1400"><img src="./assets/media/dj1-feJlXmXt.webp" alt="" loading="lazy" decoding="async" width="1834" height="1037"><img src="./assets/media/dj2-vmux5N_i.webp" alt="" loading="lazy" decoding="async" width="1400" height="1400"><img src="./assets/media/bpm1-BID9Q6oi.webp" alt="" loading="lazy" decoding="async" width="1400" height="1400"></span>
               <span class="lwa-project__summary-copy">A high-energy identity and campaign system that turns rhythm, performance, and nightlife culture into a recognisable visual pulse.</span>
             </button>
-            <div class="lwa-project__detail" id="home-work-bpm" aria-hidden="true" data-work-detail><div class="lwa-project__detail-inner"><div class="lwa-project__summary"><div class="lwa-project__actions"><a class="ll-button" href="bpm.html"><span>View case</span><span aria-hidden="true">↗</span></a><a class="ll-button" href="vcard.html"><span>Start a project</span><span aria-hidden="true">↗</span></a></div></div><div class="lwa-project__gallery" data-work-gallery tabindex="0" aria-label="Beat Per Minute project images"><figure><img src="assets/img/bpm2.png" alt="Beat Per Minute identity artwork" loading="lazy" decoding="async"></figure><figure><img src="assets/img/dj1.png" alt="Beat Per Minute event photography" loading="lazy" decoding="async"></figure><figure><img src="assets/img/dj2.png" alt="Beat Per Minute performance artwork" loading="lazy" decoding="async"></figure><figure><img src="assets/img/bpm1.png" alt="Beat Per Minute campaign application" loading="lazy" decoding="async"></figure></div></div></div>
+            <div class="lwa-project__detail" id="home-work-bpm" aria-hidden="true" data-work-detail><div class="lwa-project__detail-inner"><div class="lwa-project__summary"><div class="lwa-project__actions"><a class="ll-button" href="bpm.html"><span>View case</span><svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a><a class="ll-button" href="contact.html"><span>Start project</span><svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg></a></div></div><div class="lwa-project__gallery" data-work-gallery tabindex="0" aria-label="Beat Per Minute project images"><figure><img src="./assets/media/bpm2-B-3U8Xip.webp" alt="Beat Per Minute identity artwork" loading="lazy" decoding="async" width="1400" height="1400"></figure><figure><img src="./assets/media/dj1-feJlXmXt.webp" alt="Beat Per Minute event photography" loading="lazy" decoding="async" width="1834" height="1037"></figure><figure><img src="./assets/media/dj2-vmux5N_i.webp" alt="Beat Per Minute performance artwork" loading="lazy" decoding="async" width="1400" height="1400"></figure><figure><img src="./assets/media/bpm1-BID9Q6oi.webp" alt="Beat Per Minute campaign application" loading="lazy" decoding="async" width="1400" height="1400"></figure></div></div></div>
           </article>
         </div>
+        <!-- @include:project-archive:end -->
       </section>
 
-      <section class="ll-capabilities" id="services" aria-labelledby="ll-services-title" data-ll-section-note="What we do">
-        <nav class="ll-service-links ll-reveal" aria-label="Service categories">
-          <a class="is-active ll-button" href="#service-branding">
-            <span>Branding</span>
-            <svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 17 17 7"></path>
-              <path d="M7 7h10v10"></path>
-            </svg>
-          </a>
-          <a class="ll-button" href="#service-digital">
-            <span>Digital</span>
-            <svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 17 17 7"></path>
-              <path d="M7 7h10v10"></path>
-            </svg>
-          </a>
-          <a class="ll-button" href="#service-marketing">
-            <span>Marketing</span>
-            <svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 17 17 7"></path>
-              <path d="M7 7h10v10"></path>
-            </svg>
-          </a>
-        </nav>
 
-        <h2 class="ll-services-statement ll-reveal" id="ll-services-title">
-         Blending business acumen with refined digital craftsmanship, I design meaningful brands and scalable products engineered to convert. I lead projects from foundational strategy to final execution—bringing clarity, emotional resonance, and rigorous craft to every touchpoint. </h2>
-
-        <div class="ll-services-breakdown ll-reveal">
-          <div class="ll-services-contact">
-            <p>Let's Start a conversation.</p>
-            <a class="ll-services-contact-card ll-button ll-button--media" href="mailto:talktolawanistreet@gmail.com">
-              <span class="ll-services-contact-card__portrait">
-                <img src="assets/img/me.gif" alt="" width="500" height="594" loading="lazy" decoding="async">
-              </span>
-              <span>accounts@lawani.st</span>
-            </a>
-          </div>
-
-          <div class="ll-services-columns">
-            <section id="service-branding" aria-labelledby="service-branding-title">
-              <h3 id="service-branding-title">Branding </h3>
-              <ul>
-                <li>Brand strategy</li>
-                <li>Brand identity</li>
-                <li>Logo design</li>
-                <li>Campaign</li>
-                <li>Motion design</li>
-                <li>Photo direction</li>
-                <li>Video direction</li>
-                <!-- <li>3D</li> -->
-              </ul>
-            </section>
-
-            <section id="service-digital" aria-labelledby="service-digital-title">
-              <h3 id="service-digital-title">Digital </h3>
-              <ul>
-                <li>Digital strategy</li>
-                <li>Content</li>
-                <li>UI/UX design</li>
-                <li>Art direction</li>
-                <li>Digital design</li>
-                <li>Visual design</li>
-                <!-- <li>Motion</li> -->
-                <!-- <li>Front-end development</li>
-                <li>Back-end development</li> -->
-                <li>E-commerce</li>
-              </ul>
-            </section>
-
-            <section id="service-marketing" aria-labelledby="service-marketing-title">
-              <h3 id="service-marketing-title">Marketing</h3>
-              <ul>
-                <li>Growth strategy</li>
-                <li>B2B lead generation</li>
-                <li>Paid media</li>
-                <li>Inbound marketing</li>
-                <li>Content activation</li>
-                <!-- <li>Email nurturing</li> -->
-                <!-- <li>Lead scoring</li> -->
-                <li>GTM</li>
-                <li>AI optimisation</li>
-              </ul>
-            </section>
-          </div>
-        </div>
-      </section>
-
-      <section class="ll-manifesto" aria-labelledby="ll-manifesto-title" data-ll-section-note="How we work">
-        <p class="ll-label ll-reveal">[ How we work ]</p>
-        <div class="ll-manifesto__grid">
-          <h2 class="ll-reveal" id="ll-manifesto-title">Intentional design. Measurable momentum.</h2>
-          <div class="ll-manifesto__copy ll-reveal">
-            <p>it's about proximity to the problem, the people, and the data. That means fewer layers & clearer decisions.</p>
-            <a class="ll-action-link ll-button" href="team.html">
-              <span>Meet the Designer</span>
-              <svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true">
+      <section class="ll-capabilities ll-skill-sets" id="services" aria-labelledby="ll-services-title" data-ll-section-note="Expertise" data-no-scroll-reveal>
+        <div class="ll-skill-sets__layout">
+          <aside class="ll-skill-sets__intro">
+            <h2 id="ll-services-title">My design<br>expertise</h2>
+            <div class="ll-skill-sets__rule" aria-hidden="true"></div>
+            <p class="ll-skill-sets__eyebrow">Independent practice — 2026</p>
+            <p class="ll-skill-sets__copy">I help founders and growing businesses turn complex ideas into distinctive brand identities that build trust, communicate value, and make their products easier to recognise and choose. <br><br> From logo design and typography to colour systems and visual direction, I create cohesive identities that differentiate your business, connect with your target audience, and support your commercial goals. Every design decision is grounded in what your brand needs to communicate, who it needs to reach, and the problem it needs to solve.</p>
+            <a class="ll-skill-sets__contact" href="mailto:talktolawanistreet@gmail.com" aria-label="Start project with Lawani St">
+              <svg class="ll-icon ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path d="M7 17 17 7"></path>
                 <path d="M7 7h10v10"></path>
               </svg>
             </a>
+          </aside>
+
+          <div class="ll-skill-sets__categories" role="group" aria-label="Areas of expertise">
+            <section class="ll-skill-category" id="service-branding" aria-labelledby="service-branding-title" data-skill-category>
+              <h3 id="service-branding-title">Branding</h3>
+              <div class="ll-skill-category__content">
+                <p class="ll-skill-category__count">(06)</p>
+                <ol>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>Brand strategy</span><span>1</span></button></li>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>Visual identity</span><span>2</span></button></li>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>Art direction</span><span>3</span></button></li>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>Typography &amp; color</span><span>4</span></button></li>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>Brand systems</span><span>5</span></button></li>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>Motion identity</span><span>6</span></button></li>
+                </ol>
+              </div>
+            </section>
+
+            <section class="ll-skill-category" id="service-digital-design" aria-labelledby="service-digital-design-title" data-skill-category>
+              <h3 id="service-digital-design-title">Digital Design</h3>
+              <div class="ll-skill-category__content">
+                <p class="ll-skill-category__count">(05)</p>
+                <ol>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>UX research</span><span>1</span></button></li>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>UI &amp; product design</span><span>2</span></button></li>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>Digital experiences</span><span>3</span></button></li>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>Design systems</span><span>4</span></button></li>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>E-commerce</span><span>5</span></button></li>
+                </ol>
+              </div>
+            </section>
+
+            <section class="ll-skill-category" id="service-marketing" aria-labelledby="service-marketing-title" data-skill-category>
+              <h3 id="service-marketing-title">Marketing</h3>
+              <div class="ll-skill-category__content">
+                <p class="ll-skill-category__count">(05)</p>
+                <ol>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>Campaign strategy</span><span>1</span></button></li>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>Campaign creative</span><span>2</span></button></li>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>Content systems</span><span>3</span></button></li>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>Social &amp; digital campaigns</span><span>4</span></button></li>
+                  <li><button type="button" data-skill-row aria-pressed="false"><span>Creative activation</span><span>5</span></button></li>
+                </ol>
+              </div>
+            </section>
           </div>
         </div>
       </section>
-
-      <section class="ll-pitchdeck-invite" id="pitchdeck" aria-labelledby="ll-pitchdeck-invite-title" data-ll-section-note="Sales pitch">
-        <div class="ll-pitchdeck-invite__top ll-reveal">
-          <p class="ll-label">[ About Lawani ]</p>
-          <p>chapter 37 / 026</p>
+  <section class="ll-client-strip" aria-label="Selected client brands">
+        <div class="ll-client-strip__marquee">
+          <div class="ll-client-strip__track">
+            <ul class="ll-client-strip__logos">
+              <li><img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Generator:%20Adobe%20Illustrator%2026.1.0,%20SVG%20Export%20Plug-In%20.%20SVG%20Version:%206.00%20Build%200)%20--%3e%3csvg%20version='1.1'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20viewBox='0%200%20371%2096'%20style='enable-background:new%200%200%20371%2096;'%20xml:space='preserve'%3e%3cpath%20d='M175.2,9.1c-42.9,0-77.7,17.4-77.7,38.9c0,21.5,34.8,38.9,77.7,38.9s77.7-17.4,77.7-38.9C252.9,26.5,218.1,9.1,175.2,9.1z%20M175.2,80.7c-39.5,0-71.6-14.7-71.6-32.7s32.1-32.7,71.6-32.7c39.5,0,71.6,14.7,71.6,32.7S214.7,80.7,175.2,80.7z%20M165.4,41.2V35%20h21.9v6.1h-7.9V61h-6.1V41.2L165.4,41.2L165.4,41.2z%20M213.8,35V61h-6.1l-11.1-15.4V61h-6.1V35h6.1l11.1,15.4V35L213.8,35L213.8,35z%20M136.4,61V35h6.1l6.8,10.5l6.8-10.5h6.1V61h-6.1V46.3l-4.7,7.2h-4.3l-4.7-7.2V61L136.4,61L136.4,61z'/%3e%3c/svg%3e" alt="MTN" width="1000" height="1000" loading="lazy" decoding="async"></li>
+              <li><img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201013.12%20241.26'%3e%3crect%20fill='%232a3362'%20x='328.78'%20y='82.1'%20width='16.11'%20height='82.89'%3e%3c/rect%3e%3cpath%20fill='%232a3362'%20d='M407.24,135.58c0,11.44-7.36,16.58-17.16,16.58s-16.35-5.14-16.35-16V106.62H357.62V139.9c0,16.57,10.39,26.26,27.67,26.26,10.86,0,16.93-4,21-8.52h.94l1.4,7.36h14.82V106.62H407.24Z'%3e%3c/path%3e%3cpath%20fill='%232a3362'%20d='M565.27,153.44c-11.79,0-18.44-5.37-19.49-13.19h51.13a33.78,33.78,0,0,0,.35-4.91c-.11-21-16-29.89-33-29.89-19.73,0-34.56,11.8-34.56,30.83,0,18.09,14.25,29.88,35.61,29.88,17.87,0,29.77-7.93,32.23-20.08H581.62C579.63,150.87,573.91,153.44,565.27,153.44Zm-1-35.26c10.28,0,16.23,4.55,17.17,11H546.13C547.64,123,553.6,118.18,564.22,118.18Z'%3e%3c/path%3e%3cpath%20fill='%232a3362'%20d='M624.63,115h-1l-1.52-8.41H607.47V165h16.11V139.9c0-11.33,6.53-17.63,18.68-17.63a32.5,32.5,0,0,1,6.58.58V106.62h-2.25C635.85,106.62,629.18,108.84,624.63,115Z'%3e%3c/path%3e%3cpolygon%20fill='%232a3362'%20points='727.94%20146.78%20727.01%20146.78%20713.23%20110.24%20696.65%20110.24%20683.11%20146.67%20682.06%20146.67%20669.22%20106.62%20653.22%20106.62%20672.95%20165%20690.47%20165%20704.48%20127.75%20705.41%20127.75%20719.19%20165%20736.82%20165%20756.55%20106.62%20740.55%20106.62%20727.94%20146.78'%3e%3c/polygon%3e%3cpath%20fill='%232a3362'%20d='M820.67,148V128.46c0-15.88-13.43-23-30.13-23-17.74,0-28.83,8.41-30.35,21H776.3c1.17-5.49,5.84-8.52,14.24-8.52s14,3.15,14,9.57V129l-26.27,2c-12.14.94-21,6.31-21,17.75,0,11.79,10.16,17.39,25.1,17.39,12.06,0,19.41-3.36,23.91-8.43h.8c2.53,5.7,7.66,7.27,13.24,7.27h6.77V153.09h-1.52C822.18,153.09,820.67,151.46,820.67,148Zm-16.12-6.19c0,9.23-11,12.26-20.43,12.26-6.42,0-10.62-1.63-10.62-6.07,0-4,3.62-5.95,9-6.42l22.06-1.63Z'%3e%3c/path%3e%3cpolygon%20fill='%232a3362'%20points='880.23%20106.62%20861.43%20148.89%20860.38%20148.89%20841.35%20106.62%20823.95%20106.62%20851.15%20165%20870.42%20165%20897.5%20106.62%20880.23%20106.62'%3e%3c/polygon%3e%3cpath%20fill='%232a3362'%20d='M949,146.08c-2,4.79-7.71,7.36-16.35,7.36-11.79,0-18.44-5.37-19.49-13.19h51.13a33.78,33.78,0,0,0,.35-4.91c-.11-21-16-29.89-33-29.89-19.73,0-34.55,11.8-34.55,30.83,0,18.09,14.24,29.88,35.6,29.88,17.87,0,29.77-7.93,32.23-20.08Zm-17.4-27.9c10.28,0,16.23,4.55,17.17,11H913.47C915,123,920.94,118.18,931.56,118.18Z'%3e%3c/path%3e%3cpath%20fill='%232a3362'%20d='M302.6,102.32c0-5.14,3.62-7.35,8.29-7.35a24.17,24.17,0,0,1,6.42.93L320,84.22a36.71,36.71,0,0,0-12.14-2.1c-11.91,0-21.48,6.31-21.48,19.38v5.12h-13.9v12.79h13.9V165H302.6v-45.6h18.16V106.62H302.6Z'%3e%3c/path%3e%3cpath%20fill='%232a3362'%20d='M459,90.16H444l-.84,16.46H430.48v12.79h12.38v28.78c0,9.8,5,18,20,18a52.84,52.84,0,0,0,11.56-1.28V152.62a34.29,34.29,0,0,1-6.66.82c-8.05,0-8.75-4.55-8.75-8.06v-26h16V106.62H459Z'%3e%3c/path%3e%3cpath%20fill='%232a3362'%20d='M509.59,90.16H494.64l-.84,16.46H481.09v12.79h12.38v28.78c0,9.8,5,18,20,18A52.84,52.84,0,0,0,525,164.88V152.62a34.29,34.29,0,0,1-6.66.82c-8.05,0-8.75-4.55-8.75-8.06v-26h16.05V106.62H509.59Z'%3e%3c/path%3e%3cpath%20fill='%23009a46'%20d='M48.23,79.89c0-9.37,2.74-17.37,8.49-23.12l10,10C55.59,77.86,65.31,112.34,97,144.06s66.19,41.43,77.31,30.32l10,10c-18.76,18.76-61.49,5.45-97.26-30.33C62.24,129.23,48.23,101.07,48.23,79.89Z'%3e%3c/path%3e%3cpath%20fill='%23ff5805'%20d='M111.29,193c-9.37,0-17.37-2.74-23.13-8.49l10-10c11.11,11.11,45.59,1.39,77.31-30.32S216.89,78,205.78,66.89l10-10c18.77,18.76,5.45,61.49-30.33,97.26C160.63,179,132.47,193,111.29,193Z'%3e%3c/path%3e%3cpath%20fill='%23f5afcb'%20d='M188.76,139.84c-6.07-17.48-18.47-36.16-34.92-52.6-35.77-35.78-78.5-49.1-97.26-30.33h0c-1.33,1.34-.18,4.65,2.58,7.41s6.07,3.9,7.4,2.57c11.12-11.11,45.6-1.39,77.31,30.33,15,15,26.18,31.75,31.57,47.25,4.72,13.59,4.26,24.55-1.24,30.05h0c-1.34,1.33-.18,4.65,2.57,7.4s6.07,3.91,7.41,2.57C193.79,174.88,195.42,159,188.76,139.84Z'%3e%3c/path%3e%3cpath%20fill='%23ff9b00'%20d='M215.76,56.91c-9.63-9.63-25.49-11.26-44.67-4.59-17.47,6.06-36.16,18.47-52.6,34.91C82.72,123,69.4,165.73,88.16,184.5h0c1.34,1.33,4.65.18,7.41-2.57s3.91-6.07,2.57-7.41C87,163.41,96.75,128.93,128.47,97.21c15-15,31.75-26.18,47.25-31.57,13.59-4.71,24.55-4.26,30.06,1.24h0c1.33,1.33,4.65.18,7.4-2.58S217.09,58.24,215.76,56.91Z'%3e%3c/path%3e%3c/svg%3e" alt="Flutterwave" width="1834" height="1032" loading="lazy" decoding="async"></li>
+              <li><img src="./assets/media/ican-B4v27b_K.svg" alt="icanopi.com" width="2925" height="1644" loading="lazy" decoding="async"></li>
+              <li><img src="./assets/media/kicksj-t4ElK1p0.svg" alt="Kicksjoint" width="1920" height="1079" loading="lazy" decoding="async"></li>
+              <li><img src="./assets/media/pae-DEQZEJ46.svg" alt="PAE" width="1000" height="1000" loading="lazy" decoding="async"></li>
+              <li><img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Generator:%20Adobe%20Illustrator%2026.1.0,%20SVG%20Export%20Plug-In%20.%20SVG%20Version:%206.00%20Build%200)%20--%3e%3csvg%20version='1.1'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20viewBox='0%200%20371%2096'%20style='enable-background:new%200%200%20371%2096;'%20xml:space='preserve'%3e%3cpolygon%20points='216.1,17.1%20196.7,17.1%20185.5,39.8%20174.3,17.1%20154.9,17.1%20154.9,17.1%20169,45.6%20154.9,45.6%20154.9,62.9%20182.7,62.9%20176.9,67.6%20176.9,86.5%20185.5,86.5%20185.5,86.5%20194.1,86.5%20194.1,62.9%20194.1,62.9%20194.1,62.9%20216.1,62.9%20216.1,45.6%20202,45.6%20216.1,17.1%20'/%3e%3c/svg%3e" alt="The Yellow of Lagos" width="1834" height="1032" loading="lazy" decoding="async"></li>
+              <li><img src="data:image/svg+xml,%3csvg%20width='371'%20height='96'%20viewBox='0%200%20371%2096'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_3034_5318)'%3e%3cpath%20d='M291.233%2048.2247C291.054%2047.143%20290.515%2046.1532%20289.705%2045.4147C288.894%2044.6761%20287.859%2044.2317%20286.765%2044.153C286.648%2044.1426%20286.531%2044.1392%20286.413%2044.1392H279.89C279.888%2044.1393%20279.887%2044.1401%20279.886%2044.1413C279.884%2044.1426%20279.883%2044.1443%20279.883%2044.1461V44.153H259.746V54.3927H280.99V57.306H256.849V41.2397H291.233V31H251.495C250.853%2030.9998%20250.218%2031.126%20249.625%2031.3714C249.032%2031.6168%20248.494%2031.9767%20248.04%2032.4304C247.586%2032.8841%20247.226%2033.4227%20246.981%2034.0156C246.736%2034.6084%20246.609%2035.2438%20246.61%2035.8854V62.6637C246.61%2063.9593%20247.124%2065.2019%20248.041%2066.1181C248.957%2067.0342%20250.199%2067.549%20251.495%2067.5491H291.233V61.6156H291.295L291.297%2061.6153L291.298%2061.6146L291.298%2061.6135L291.299%2061.6121V49.0246C291.3%2048.7566%20291.278%2048.489%20291.233%2048.2247Z'%20fill='%232663DD'/%3e%3cpath%20d='M234.66%2031L234.658%2057.2527C233.595%2057.2786%20230.549%2057.3082%20222.233%2057.3082H222.108C213.792%2057.3082%20210.746%2057.2786%20209.683%2057.2527L209.681%2031H199.44V62.4305C199.449%2063.7856%20199.991%2065.0827%20200.95%2066.0408C201.908%2066.9989%20203.205%2067.5408%20204.56%2067.5491H239.781C241.136%2067.5408%20242.433%2066.9989%20243.391%2066.0408C244.35%2065.0827%20244.892%2063.7856%20244.901%2062.4305V31H234.66Z'%20fill='%232663DD'/%3e%3cpath%20d='M180.144%2041.2411H197.732V31H152.271V41.2411H169.859V67.5491H180.144V41.2411Z'%20fill='%232663DD'/%3e%3cpath%20d='M161.968%2053.76L139.214%2031L116.507%2053.76V67.5491H126.748V57.9614L139.218%2045.4941L151.728%2057.9652V67.5491H161.968V53.76Z'%20fill='%232663DD'/%3e%3cpath%20d='M77.7015%2044.7891L100.456%2067.5491L123.163%2044.7891V31H112.922V40.5877L100.452%2053.0549L87.9426%2040.5839V31H77.7015V44.7891Z'%20fill='%232663DD'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_3034_5318'%3e%3crect%20width='213.597'%20height='36.5491'%20fill='white'%20transform='translate(77.7015%2031)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="VatuG" width="2925" height="1644" loading="lazy" decoding="async"></li>
+            </ul>
+            <ul class="ll-client-strip__logos" aria-hidden="true">
+              <li><img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Generator:%20Adobe%20Illustrator%2026.1.0,%20SVG%20Export%20Plug-In%20.%20SVG%20Version:%206.00%20Build%200)%20--%3e%3csvg%20version='1.1'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20viewBox='0%200%20371%2096'%20style='enable-background:new%200%200%20371%2096;'%20xml:space='preserve'%3e%3cpath%20d='M175.2,9.1c-42.9,0-77.7,17.4-77.7,38.9c0,21.5,34.8,38.9,77.7,38.9s77.7-17.4,77.7-38.9C252.9,26.5,218.1,9.1,175.2,9.1z%20M175.2,80.7c-39.5,0-71.6-14.7-71.6-32.7s32.1-32.7,71.6-32.7c39.5,0,71.6,14.7,71.6,32.7S214.7,80.7,175.2,80.7z%20M165.4,41.2V35%20h21.9v6.1h-7.9V61h-6.1V41.2L165.4,41.2L165.4,41.2z%20M213.8,35V61h-6.1l-11.1-15.4V61h-6.1V35h6.1l11.1,15.4V35L213.8,35L213.8,35z%20M136.4,61V35h6.1l6.8,10.5l6.8-10.5h6.1V61h-6.1V46.3l-4.7,7.2h-4.3l-4.7-7.2V61L136.4,61L136.4,61z'/%3e%3c/svg%3e" alt="" width="1000" height="1000" loading="lazy" decoding="async"></li>
+              <li><img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201013.12%20241.26'%3e%3crect%20fill='%232a3362'%20x='328.78'%20y='82.1'%20width='16.11'%20height='82.89'%3e%3c/rect%3e%3cpath%20fill='%232a3362'%20d='M407.24,135.58c0,11.44-7.36,16.58-17.16,16.58s-16.35-5.14-16.35-16V106.62H357.62V139.9c0,16.57,10.39,26.26,27.67,26.26,10.86,0,16.93-4,21-8.52h.94l1.4,7.36h14.82V106.62H407.24Z'%3e%3c/path%3e%3cpath%20fill='%232a3362'%20d='M565.27,153.44c-11.79,0-18.44-5.37-19.49-13.19h51.13a33.78,33.78,0,0,0,.35-4.91c-.11-21-16-29.89-33-29.89-19.73,0-34.56,11.8-34.56,30.83,0,18.09,14.25,29.88,35.61,29.88,17.87,0,29.77-7.93,32.23-20.08H581.62C579.63,150.87,573.91,153.44,565.27,153.44Zm-1-35.26c10.28,0,16.23,4.55,17.17,11H546.13C547.64,123,553.6,118.18,564.22,118.18Z'%3e%3c/path%3e%3cpath%20fill='%232a3362'%20d='M624.63,115h-1l-1.52-8.41H607.47V165h16.11V139.9c0-11.33,6.53-17.63,18.68-17.63a32.5,32.5,0,0,1,6.58.58V106.62h-2.25C635.85,106.62,629.18,108.84,624.63,115Z'%3e%3c/path%3e%3cpolygon%20fill='%232a3362'%20points='727.94%20146.78%20727.01%20146.78%20713.23%20110.24%20696.65%20110.24%20683.11%20146.67%20682.06%20146.67%20669.22%20106.62%20653.22%20106.62%20672.95%20165%20690.47%20165%20704.48%20127.75%20705.41%20127.75%20719.19%20165%20736.82%20165%20756.55%20106.62%20740.55%20106.62%20727.94%20146.78'%3e%3c/polygon%3e%3cpath%20fill='%232a3362'%20d='M820.67,148V128.46c0-15.88-13.43-23-30.13-23-17.74,0-28.83,8.41-30.35,21H776.3c1.17-5.49,5.84-8.52,14.24-8.52s14,3.15,14,9.57V129l-26.27,2c-12.14.94-21,6.31-21,17.75,0,11.79,10.16,17.39,25.1,17.39,12.06,0,19.41-3.36,23.91-8.43h.8c2.53,5.7,7.66,7.27,13.24,7.27h6.77V153.09h-1.52C822.18,153.09,820.67,151.46,820.67,148Zm-16.12-6.19c0,9.23-11,12.26-20.43,12.26-6.42,0-10.62-1.63-10.62-6.07,0-4,3.62-5.95,9-6.42l22.06-1.63Z'%3e%3c/path%3e%3cpolygon%20fill='%232a3362'%20points='880.23%20106.62%20861.43%20148.89%20860.38%20148.89%20841.35%20106.62%20823.95%20106.62%20851.15%20165%20870.42%20165%20897.5%20106.62%20880.23%20106.62'%3e%3c/polygon%3e%3cpath%20fill='%232a3362'%20d='M949,146.08c-2,4.79-7.71,7.36-16.35,7.36-11.79,0-18.44-5.37-19.49-13.19h51.13a33.78,33.78,0,0,0,.35-4.91c-.11-21-16-29.89-33-29.89-19.73,0-34.55,11.8-34.55,30.83,0,18.09,14.24,29.88,35.6,29.88,17.87,0,29.77-7.93,32.23-20.08Zm-17.4-27.9c10.28,0,16.23,4.55,17.17,11H913.47C915,123,920.94,118.18,931.56,118.18Z'%3e%3c/path%3e%3cpath%20fill='%232a3362'%20d='M302.6,102.32c0-5.14,3.62-7.35,8.29-7.35a24.17,24.17,0,0,1,6.42.93L320,84.22a36.71,36.71,0,0,0-12.14-2.1c-11.91,0-21.48,6.31-21.48,19.38v5.12h-13.9v12.79h13.9V165H302.6v-45.6h18.16V106.62H302.6Z'%3e%3c/path%3e%3cpath%20fill='%232a3362'%20d='M459,90.16H444l-.84,16.46H430.48v12.79h12.38v28.78c0,9.8,5,18,20,18a52.84,52.84,0,0,0,11.56-1.28V152.62a34.29,34.29,0,0,1-6.66.82c-8.05,0-8.75-4.55-8.75-8.06v-26h16V106.62H459Z'%3e%3c/path%3e%3cpath%20fill='%232a3362'%20d='M509.59,90.16H494.64l-.84,16.46H481.09v12.79h12.38v28.78c0,9.8,5,18,20,18A52.84,52.84,0,0,0,525,164.88V152.62a34.29,34.29,0,0,1-6.66.82c-8.05,0-8.75-4.55-8.75-8.06v-26h16.05V106.62H509.59Z'%3e%3c/path%3e%3cpath%20fill='%23009a46'%20d='M48.23,79.89c0-9.37,2.74-17.37,8.49-23.12l10,10C55.59,77.86,65.31,112.34,97,144.06s66.19,41.43,77.31,30.32l10,10c-18.76,18.76-61.49,5.45-97.26-30.33C62.24,129.23,48.23,101.07,48.23,79.89Z'%3e%3c/path%3e%3cpath%20fill='%23ff5805'%20d='M111.29,193c-9.37,0-17.37-2.74-23.13-8.49l10-10c11.11,11.11,45.59,1.39,77.31-30.32S216.89,78,205.78,66.89l10-10c18.77,18.76,5.45,61.49-30.33,97.26C160.63,179,132.47,193,111.29,193Z'%3e%3c/path%3e%3cpath%20fill='%23f5afcb'%20d='M188.76,139.84c-6.07-17.48-18.47-36.16-34.92-52.6-35.77-35.78-78.5-49.1-97.26-30.33h0c-1.33,1.34-.18,4.65,2.58,7.41s6.07,3.9,7.4,2.57c11.12-11.11,45.6-1.39,77.31,30.33,15,15,26.18,31.75,31.57,47.25,4.72,13.59,4.26,24.55-1.24,30.05h0c-1.34,1.33-.18,4.65,2.57,7.4s6.07,3.91,7.41,2.57C193.79,174.88,195.42,159,188.76,139.84Z'%3e%3c/path%3e%3cpath%20fill='%23ff9b00'%20d='M215.76,56.91c-9.63-9.63-25.49-11.26-44.67-4.59-17.47,6.06-36.16,18.47-52.6,34.91C82.72,123,69.4,165.73,88.16,184.5h0c1.34,1.33,4.65.18,7.41-2.57s3.91-6.07,2.57-7.41C87,163.41,96.75,128.93,128.47,97.21c15-15,31.75-26.18,47.25-31.57,13.59-4.71,24.55-4.26,30.06,1.24h0c1.33,1.33,4.65.18,7.4-2.58S217.09,58.24,215.76,56.91Z'%3e%3c/path%3e%3c/svg%3e" alt="" width="1834" height="1032" loading="lazy" decoding="async"></li>
+              <li><img src="./assets/media/ican-B4v27b_K.svg" alt="" width="2925" height="1644" loading="lazy" decoding="async"></li>
+              <li><img src="./assets/media/kicksj-t4ElK1p0.svg" alt="" width="1920" height="1079" loading="lazy" decoding="async"></li>
+              <li><img src="./assets/media/pae-DEQZEJ46.svg" alt="" width="1000" height="1000" loading="lazy" decoding="async"></li>
+              <li><img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Generator:%20Adobe%20Illustrator%2026.1.0,%20SVG%20Export%20Plug-In%20.%20SVG%20Version:%206.00%20Build%200)%20--%3e%3csvg%20version='1.1'%20id='Layer_1'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20viewBox='0%200%20371%2096'%20style='enable-background:new%200%200%20371%2096;'%20xml:space='preserve'%3e%3cpolygon%20points='216.1,17.1%20196.7,17.1%20185.5,39.8%20174.3,17.1%20154.9,17.1%20154.9,17.1%20169,45.6%20154.9,45.6%20154.9,62.9%20182.7,62.9%20176.9,67.6%20176.9,86.5%20185.5,86.5%20185.5,86.5%20194.1,86.5%20194.1,62.9%20194.1,62.9%20194.1,62.9%20216.1,62.9%20216.1,45.6%20202,45.6%20216.1,17.1%20'/%3e%3c/svg%3e" alt="" width="1834" height="1032" loading="lazy" decoding="async"></li>
+              <li><img src="data:image/svg+xml,%3csvg%20width='371'%20height='96'%20viewBox='0%200%20371%2096'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_3034_5318)'%3e%3cpath%20d='M291.233%2048.2247C291.054%2047.143%20290.515%2046.1532%20289.705%2045.4147C288.894%2044.6761%20287.859%2044.2317%20286.765%2044.153C286.648%2044.1426%20286.531%2044.1392%20286.413%2044.1392H279.89C279.888%2044.1393%20279.887%2044.1401%20279.886%2044.1413C279.884%2044.1426%20279.883%2044.1443%20279.883%2044.1461V44.153H259.746V54.3927H280.99V57.306H256.849V41.2397H291.233V31H251.495C250.853%2030.9998%20250.218%2031.126%20249.625%2031.3714C249.032%2031.6168%20248.494%2031.9767%20248.04%2032.4304C247.586%2032.8841%20247.226%2033.4227%20246.981%2034.0156C246.736%2034.6084%20246.609%2035.2438%20246.61%2035.8854V62.6637C246.61%2063.9593%20247.124%2065.2019%20248.041%2066.1181C248.957%2067.0342%20250.199%2067.549%20251.495%2067.5491H291.233V61.6156H291.295L291.297%2061.6153L291.298%2061.6146L291.298%2061.6135L291.299%2061.6121V49.0246C291.3%2048.7566%20291.278%2048.489%20291.233%2048.2247Z'%20fill='%232663DD'/%3e%3cpath%20d='M234.66%2031L234.658%2057.2527C233.595%2057.2786%20230.549%2057.3082%20222.233%2057.3082H222.108C213.792%2057.3082%20210.746%2057.2786%20209.683%2057.2527L209.681%2031H199.44V62.4305C199.449%2063.7856%20199.991%2065.0827%20200.95%2066.0408C201.908%2066.9989%20203.205%2067.5408%20204.56%2067.5491H239.781C241.136%2067.5408%20242.433%2066.9989%20243.391%2066.0408C244.35%2065.0827%20244.892%2063.7856%20244.901%2062.4305V31H234.66Z'%20fill='%232663DD'/%3e%3cpath%20d='M180.144%2041.2411H197.732V31H152.271V41.2411H169.859V67.5491H180.144V41.2411Z'%20fill='%232663DD'/%3e%3cpath%20d='M161.968%2053.76L139.214%2031L116.507%2053.76V67.5491H126.748V57.9614L139.218%2045.4941L151.728%2057.9652V67.5491H161.968V53.76Z'%20fill='%232663DD'/%3e%3cpath%20d='M77.7015%2044.7891L100.456%2067.5491L123.163%2044.7891V31H112.922V40.5877L100.452%2053.0549L87.9426%2040.5839V31H77.7015V44.7891Z'%20fill='%232663DD'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_3034_5318'%3e%3crect%20width='213.597'%20height='36.5491'%20fill='white'%20transform='translate(77.7015%2031)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="" width="2925" height="1644" loading="lazy" decoding="async"></li>
+            </ul>
+          </div>
         </div>
-
-        <div class="ll-pitchdeck-invite__grid">
-          <div class="ll-pitchdeck-invite__copy">
-            <h2 class="ll-reveal" id="ll-pitchdeck-invite-title">Let's get<br> coool.</h2>
-            <div class="ll-pitchdeck-invite__intro ll-reveal">
-              <!-- <p>A compact look at what I build, how I think, and what working together actually feels like.</p> -->
-              <a class="ll-pitchdeck-invite__cta ll-button" href="pitchdeck.html">
-                <span>View Resume</span>
-                <span aria-hidden="true">( + )</span>
+      </section>
+      <section class="ll-manifesto" id="how-i-work" aria-labelledby="ll-manifesto-title" data-ll-section-note="How I get work done">
+        <p class="ll-label" id="about">[ About Me ]</p>
+        <div class="ll-manifesto__grid">
+          <div class="ll-manifesto__visual ll-reveal">
+            <div class="ll-manifesto__studio">
+              <div class="ll-manifesto__gallery">
+                <figure>
+                  <img src="./assets/media/1-BLCKCObR.jpg" alt="A creative studio workspace filled with plants and design materials" width="1024" height="1024" loading="lazy" decoding="async">
+                </figure>
+                <figure>
+                  <img src="./assets/media/lion-Cf_xO4f0.webp" alt="Hands at work on a laptop" width="1240" height="1240" loading="lazy" decoding="async">
+                </figure>
+              </div>
+              <p class="ll-manifesto__caption">Designer <span aria-hidden="true">|
+              </span> Thinker</p>
+            </div>
+            <figure class="ll-manifesto__portrait">
+              <video
+                src="./assets/media/holo-CU50mWlw.mp4"
+                width="1122"
+                height="1395"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                aria-label="Leonard Lawani"
+              ></video>
+            </figure>
+          </div>
+          <div class="ll-manifesto__content">
+            <h2 id="ll-manifesto-title">From idea to impact.</h2>
+            <div class="ll-manifesto__copy ll-reveal">
+              <p>I’m a senior designer specialising in branding, digital design and marketing, with close to ten years of experience across identity systems, digital experiences, campaigns, UX/UI and creative direction. I bring strategy and craft together to turn ambitious ideas into distinctive brands, useful products and campaigns people can connect with, from concept through production.</p>
+              <p>More recently, I’ve been developing the interactive and motion side of my work further, including animated brand identities, digital experiences and interface concepts.</p>
+              <a class="ll-action-link ll-button" href="pitchdeck.html">
+                <span>See full résumé</span>
+                <svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 17 17 7"></path>
+                  <path d="M7 7h10v10"></path>
+                </svg>
               </a>
             </div>
           </div>
-
-          <a class="ll-pitchdeck-invite__preview ll-reveal" href="pitchdeck.html" aria-label="Open the Lawani St sales pitch">
-            <span class="ll-pitchdeck-invite__card ll-pitchdeck-invite__card--one">
-              <img src="assets/img/1.png" alt="" width="1615" height="1615" loading="lazy" decoding="async">
-              <span class="ll-pitchdeck-invite__card-meta" aria-hidden="true"><span>01</span><span>Baller</span></span>
-            </span>
-            <span class="ll-pitchdeck-invite__card ll-pitchdeck-invite__card--two">
-              <img src="assets/img/3.png" alt="" width="1000" height="1439" loading="lazy" decoding="async">
-              <span class="ll-pitchdeck-invite__card-meta" aria-hidden="true"><span>02</span><span>creative</span></span>
-            </span>
-            <span class="ll-pitchdeck-invite__card ll-pitchdeck-invite__card--three">
-              <img src="assets/img/2.png" alt="" width="3012" height="3706" loading="lazy" decoding="async">
-              <span class="ll-pitchdeck-invite__card-meta" aria-hidden="true"><span>03</span><span>Driver</span></span>
-            </span>
-            <!-- <span class="ll-pitchdeck-invite__stamp">
-              <span>Lawani St.</span>
-              <span>26"</span>
-            </span> -->
-          </a>
         </div>
       </section>
+
+
     </main>
 
     <footer class="ll-footer" id="contact">
-
-      <div class="ll-pitchdeck-invite__top ll-reveal">
-        <p class="ll-label">[ Get in touch ]</p>
-        <p>Let's talk here</p>
-      </div>
-      <div class="ll-footer__top">
-        <div>
-          <p class="ll-label"></p>
-          <h2>You have something worth building.</h2>
-        </div>
-        <div class="ll-footer__contact">
-          <p>Got a brand to shape, a product to launch, or an experience that needs more edge? Let's talk.</p>
-          <div class="ll-footer__actions">
-            <a class="ll-button" href="vcard.html">
-              <span>Start a project</span>
-              <svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M7 17 17 7"></path>
-                <path d="M7 7h10v10"></path>
-              </svg>
-            </a>
-            <a class="ll-button" href="mailto:accounts@lawani.st">
-              <span>Email us</span>
-              <svg class="ll-icon ll-icon--sm ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true">
+      <div class="ll-footer__panel">
+        <div class="ll-footer__endcap">
+          <div class="ll-footer__studio">
+            <p>Independent creative studio</p>
+          </div>
+          <div class="ll-footer__project-cta">
+            <a class="ll-button" href="mailto:talktolawanistreet@gmail.com">
+              <span>Have a project in mind</span>
+              <svg class="ll-icon ll-icon--arrow-up-right" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                 <path d="M7 17 17 7"></path>
                 <path d="M7 7h10v10"></path>
               </svg>
             </a>
           </div>
+          <p class="ll-footer__year">2026</p>
         </div>
       </div>
-
-      <div class="ll-footer__bottom" id="footer-navigation">
-        <nav aria-label="Footer navigation">
-          <a href="#work">Work</a>
-          <a href="#services">Services</a>
-          <a href="team.html">Studio</a>
-          <a href="pitchdeck.html">Sales pitch</a>
-        </nav>
-        <nav aria-label="Social media">
-          <a href="https://www.instagram.com/lawani.st" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://www.linkedin.com/company/lawani-st" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </nav>
-        <button
-          class="ll-theme-toggle ll-theme-toggle--footer"
-          type="button"
-          aria-label="Switch to light theme"
-          aria-pressed="false"
-          data-ll-theme-toggle
-        >
-          <span class="ll-theme-toggle__choice ll-theme-toggle__choice--dark" aria-hidden="true">DK</span>
-          <span class="ll-theme-toggle__track" aria-hidden="true"><i></i></span>
-          <span class="ll-theme-toggle__choice ll-theme-toggle__choice--light" aria-hidden="true">LT</span>
-          <span class="ll-visually-hidden" data-ll-theme-label>Dark</span>
-        </button>
-        <p>&copy; 2026 Lawani St.</p>
+      <div class="ll-footer__marquee" aria-hidden="true"></div>
+      <div class="ll-footer__utility" id="footer-navigation">
+          <nav class="ll-footer__social-links" aria-label="Social media and booking">
+            <a href="https://www.instagram.com/lawani.st" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg class="ll-footer__instagram-icon" viewBox="0 0 2200 2200" aria-hidden="true" focusable="false"><path fill-rule="evenodd" d="M1528.1,294H666.9C445,294,265,474,265,695.9v861.2C265,1779,445,1959,666.9,1959h861.2   c221.9,0,401.9-180,401.9-401.9V695.9C1930,474,1750,294,1528.1,294z M1786.5,1528.4c0,158.5-128.6,287.1-287.1,287.1H695.6   c-158.5,0-287.1-128.6-287.1-287.1V724.6c0-158.5,128.6-287.1,287.1-287.1h803.8c158.5,0,287.1,128.6,287.1,287.1V1528.4z"/><path fill-rule="evenodd" d="M1097.5,695.9c-237.7,0-430.6,192.9-430.6,430.6c0,237.7,192.9,430.6,430.6,430.6s430.6-192.9,430.6-430.6   C1528.1,888.8,1335.2,695.9,1097.5,695.9z M1097.5,1413.6c-158.2,0-287.1-128.9-287.1-287.1s128.9-287.1,287.1-287.1   s287.1,128.9,287.1,287.1S1255.7,1413.6,1097.5,1413.6z"/><circle class="st0" cx="1556.8" cy="667.2" r="86.1"/></svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.linkedin.com/in/leonardlawani/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg class="ll-footer__linkedin-icon" viewBox="0 0 2200 2200" aria-hidden="true" focusable="false"><path class="ll-footer__linkedin-bg" fill-rule="evenodd" d="M1530.6,309.6H669.4c-222.1,0-401.9,179.8-401.9,401.9v861.3c0,222.1,179.8,401.9,401.9,401.9h861.3  c222.1,0,401.9-179.8,401.9-401.9V711.5C1932.5,490.2,1752.7,309.6,1530.6,309.6z M1788.7,1544c0,158.2-128.6,286.8-286.8,286.8  H698.1c-158.2,0-286.8-128.6-286.8-286.8V740.2c0-158.2,128.6-286.8,286.8-286.8h803.7c158.2,0,286.8,128.6,286.8,286.8V1544z"/><rect x="686.6" y="987.1" width="178.2" height="555.3" class="ll-footer__linkedin-glyph"/><path class="ll-footer__linkedin-glyph" fill-rule="evenodd" d="M1333.2,1005.2c-0.9-0.3-1.8-0.7-2.7-1c-25.8-9.6-53.3-15.6-81.9-17.3c-1.1-0.1-2.1-0.1-3.2-0.2c-0.1,0-0.2,0-0.2,0   c-2.4-0.1-4.7-0.2-7.1-0.3c-2.5-0.1-4.9-0.1-7.4-0.1c-2.5,0-5,0-7.4,0.1c-2.4,0.1-4.8,0.2-7.1,0.3c-0.1,0-0.2,0-0.2,0   c-1.1,0-2.1,0.1-3.2,0.2c-28.7,1.8-56.2,7.8-81.9,17.3c-0.8,0.3-1.6,0.6-2.4,0.9c-108.4,41.4-185.3,146.5-185.3,268.8v267.6h178.2   v-267.6c0-60.7,48.7-109.5,109.5-109.5c30.4,0,57.7,12.2,77.5,32c10.5,10.5,18.9,23.2,24.4,37.3c0.3,0.8,0.6,1.7,1,2.5   c0.6,1.7,1.2,3.4,1.7,5.1c1.3,4.3,2.4,8.7,3.2,13.2c0.5,2.7,0.9,5.4,1.1,8.2c0.4,3.7,0.6,7.4,0.6,11.2v267.6h178.2v-267.6   C1518.2,1151.7,1441.4,1046.7,1333.2,1005.2z"/><circle cx="775.3" cy="836.1" r="93.5" class="ll-footer__linkedin-glyph"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://calendly.com/leonardlawani/30min" target="_blank" rel="noopener noreferrer" aria-label="Book a 30-minute call">
+              <svg class="ll-footer__calendar-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 5h12a1.5 1.5 0 0 1 1.5 1.5v5M8 3v4M14 3v4M5 9h12"></path><circle cx="17" cy="17" r="4.5"></circle><path d="M17 14.8v2.4l1.5 1"></path></svg>
+              <span>Book a 30-minute call</span>
+            </a>
+          </nav>
+          <nav aria-label="Legal">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="privacy.html#cookie-settings">Cookie Preferences</a>
+          </nav>
+          <p>&copy; 2026 Lawani St.</p>
+          <a class="ll-footer__credits" href="team.html">Credits</a>
+          <a class="ll-footer__back-to-top" href="#top" aria-label="Scroll to top">
+            <svg class="ll-icon ll-icon--arrow-up" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 19V5"></path>
+              <path d="m6 11 6-6 6 6"></path>
+            </svg>
+          </a>
       </div>
     </footer>
 
-    <script src="assets/js/elastic-cursor.js?v=20260820-production-stable-1" defer></script>
-    <script src="assets/js/halftone-field.js?v=20260813-cleanup-1" defer></script>
-    <script src="assets/js/interactive-background.js?v=20260818-interactive-bg-1" defer></script>
-    <script src="assets/js/pages/lamalama-ui.js?v=20260820-dock-scramble-1" defer></script>
-    <script src="assets/js/pages/home-ui.js?v=20260809-mobile-view-more" defer></script>
-    <script src="assets/js/pages/work-lama.js?v=20260811-shared-archive" defer></script>
+
   </body>
 </html>

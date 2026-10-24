@@ -1,45 +1,26 @@
-# Codebase Structure
+# Codebase structure
 
-## Overview
+This is a static multi-page site. Public routes live at the repository root and the production HTML allowlist is maintained in `vite.config.mjs`.
 
-The repository is organized so page routes remain at root, while all static assets are centralized in `assets/`.
-
-## Directory Structure
-
-```
+```text
 html/
 ├── assets/
-│   ├── css/                  # Stylesheets and vendor CSS
-│   ├── js/                   # Application scripts, modules, third-party libraries
-│   ├── img/                  # Images and project-specific visual assets
-│   ├── fonts/                # Font files
-│   ├── video/                # Video assets
-│   ├── favicons/             # Favicon and web manifest files
-│   └── slide/                # Slide-specific assets
-├── docs/
-│   └── FILE_MANAGEMENT.md    # Operational file management rules
-├── legacy/
-│   └── unused-root/          # Archived root files retained for reference
-├── php/                      # Mail endpoint
-├── scss/                     # SCSS source files
-├── scripts/
-│   └── file-manager.sh       # Size/reference auditing utility
-└── *.html                    # Page entry points (kept at root for stable URLs)
+│   ├── css/
+│   │   ├── components/       # Component appearance, states, and motion
+│   │   └── entries/          # Route-family CSS compositions
+│   ├── js/
+│   │   ├── components/       # Component interactions
+│   │   ├── modules/          # Shared behavior
+│   │   ├── pages/            # Page-family behavior
+│   │   └── libs/             # Runtime libraries
+│   ├── media/                # Source media and fonts
+│   └── ...                   # Other shared assets
+├── docs/                     # Architecture and audit notes
+├── *.html                    # Public routes and standalone experiments
+├── vite.config.mjs           # Production route allowlist
+└── package.json              # Dev and production build commands
 ```
 
-## File Management Workflow
+Generated CSS, JavaScript, and media are emitted under `dist/assets/build/` or `_site/assets/build/`. The source tree does not contain a generated `assets/build/` directory.
 
-1. Keep new static assets under `assets/`.
-2. Keep route files (`*.html`) at root unless routing is intentionally changed.
-3. Archive superseded loose files in `legacy/unused-root/`.
-4. Run link integrity checks after moves:
-
-```bash
-./scripts/file-manager.sh check-links
-```
-
-5. Use size report to manage bloat:
-
-```bash
-./scripts/file-manager.sh largest
-```
+For route ownership, component conventions, and build workflow, see [docs/FRONTEND_ARCHITECTURE.md](docs/FRONTEND_ARCHITECTURE.md).
