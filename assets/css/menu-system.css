@@ -106,6 +106,18 @@ html body .ll-floating-header .ll-nav-toggle[aria-expanded="true"] .ll-nav-toggl
   transform: translateY(-6px) rotate(-45deg);
 }
 
+html body .ll-floating-header .ll-nav-toggle:not([aria-expanded="true"]):is(:hover, :focus-visible) .ll-nav-toggle__line--1 {
+  transform: translateX(1px) scaleX(0.86);
+}
+
+html body .ll-floating-header .ll-nav-toggle:not([aria-expanded="true"]):is(:hover, :focus-visible) .ll-nav-toggle__line--2 {
+  transform: scaleX(0.68);
+}
+
+html body .ll-floating-header .ll-nav-toggle:not([aria-expanded="true"]):is(:hover, :focus-visible) .ll-nav-toggle__line--3 {
+  transform: translateX(-1px) scaleX(0.86);
+}
+
 html body .ll-floating-header .ll-nav-toggle:is(:hover, :focus-visible),
 html body .ll-floating-header .ll-nav-toggle[aria-expanded="true"] {
   border: 0 !important;
